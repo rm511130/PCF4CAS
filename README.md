@@ -10,22 +10,22 @@
 
 ## Agenda
 
-● Pivotal Mission & Applicability to our Customers
-     ○ Value Statement
-     ○ Case Studies
-● PCF Installation Steps
-     ○ Operations Manager
-     ○ Tile(s) Installation
-● Demo
-     ○ Day 2 Operations
-        ■ Scaling
-        ■ Health Monitoring
-        ■ Patching
-        ■ Upgrading
-    ○ Pivotal Container Service (Kubernetes) workload deployment
-    ○ Pivotal Application Service for higher level developer productivity
-● Data Presentation (1hr including Q&A)
-● Next Steps
+- Pivotal Mission & Applicability to our Customers
+     - Value Statement
+     - Case Studies
+-  PCF Installation Steps
+     - Operations Manager
+     - Tile(s) Installation
+- Demo
+     - Day 2 Operations
+        - Scaling
+        - Health Monitoring
+        - Patching
+        - Upgrading
+     - Pivotal Container Service (Kubernetes) workload deployment
+     - Pivotal Application Service for higher level developer productivity
+- Pivotal Data Update and Q&A
+- Next Steps
 
 
 

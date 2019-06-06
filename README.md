@@ -22,7 +22,7 @@
 - Pivotal Data Update and Q&A
 - Next Steps
 
-## Pre-Requisites
+## Technical Pre-Requisites
 - Ability to access https://chess.cfapps.io
 - Ability to ssh into VMs with public IP addresses e.g. `ssh ubuntu@test.pcf4u.com`
 - Ability to access and update this [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8)

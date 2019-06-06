@@ -8,7 +8,24 @@
 - Pivotal meets enterprises wherever they are on this journey and helps them accelerate their transition to continuous delivery, reducing waste (costs and time) through process and automation to achieve world-class efficiency and productivity.
 - The business outcomes that Pivotal’s customers are achieving are compelling by any standard.
 
+## Agenda
 
+● Pivotal Mission & Applicability to our Customers
+     ○ Value Statement
+     ○ Case Studies
+● PCF Installation Steps
+     ○ Operations Manager
+     ○ Tile(s) Installation
+● Demo
+     ○ Day 2 Operations
+        ■ Scaling
+        ■ Health Monitoring
+        ■ Patching
+        ■ Upgrading
+    ○ Pivotal Container Service (Kubernetes) workload deployment
+    ○ Pivotal Application Service for higher level developer productivity
+● Data Presentation (1hr including Q&A)
+● Next Steps
 
 
 

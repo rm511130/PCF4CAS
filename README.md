@@ -1,4 +1,4 @@
-# Pivotal: Transforming how the world builds software
+# Pivotal: Transforming How The World Builds Software
 
 ## Our Premises
 - Enterprises rely on software to improve business outcomes.

@@ -9,7 +9,9 @@
 -  PCF Installation Steps
      - Operations Manager
      - Tile(s) Installation
-- Demo
+- Demo & Hands-on
+     - Developer Experience
+        - PAS & PKS
      - Day 2 Operations
         - Scaling
         - Health Monitoring

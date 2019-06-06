@@ -40,7 +40,7 @@ https://pivotal.io/customers
 
 ## PCF Architecture, Installation & Set-up 
 
-[](images/CaaS_PaaS_FaaS_OSBAPI.png)
+![](./images/CaaS_PaaS_FaaS_OSBAPI.png)
 
 
 

@@ -8,7 +8,8 @@
 - Pivotal meets enterprises wherever they are on this journey and helps them accelerate their transition to continuous delivery, reducing waste (costs and time) through process and automation to achieve world-class efficiency and productivity.
 - The business outcomes that Pivotal’s customers are achieving are compelling by any standard.
 
-## Agenda 06/12/2019 9:30AM to 3:30PM with Breakfast and Lunch Included
+## 06/12/2019 Agenda
+#9:30AM to 3:30PM (Breakfast & Lunch Included)
 
 - Pivotal Mission & Applicability to our Customers
      - Value Statement

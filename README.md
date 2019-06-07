@@ -56,7 +56,11 @@
 - Pivotal helps enterprises accelerate their transition to continuous delivery, reducing waste (costs and time) through process and automation to achieve world-class efficiency and productivity.
 - Pivotal’s customers are achieving are compelling Business Outcomes.
 
+-----------------------------------------------------
+
 ![](./images/5s.png)
+
+-----------------------------------------------------
 
 ## Case Studies
 

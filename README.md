@@ -23,7 +23,7 @@
      - Pivotal Application Service for higher level developer productivity
 - Pivotal Data Update and Q&A
 - Next Steps
-
+-----------------------------------------------------
 ## Technical Pre-Requisites
 - Ability to access https://chess.cfapps.io
 - Ability to access and update this [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8)
@@ -43,7 +43,9 @@
   - `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
   - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
 
-## Pivotal Beliefs: Value Statement
+-----------------------------------------------------
+
+## Pivotal Beliefs: Value Statements
 - Enterprises rely on software to improve business outcomes.
 - They depend on velocity of converting ideas to new features, new applications, new capabilities, and new services.
 - This pace of change is generating a daunting backlog of work for IT leaders, who are also under pressure to reduce technology spend and limit security vulnerabilities.
@@ -55,10 +57,13 @@
 
 https://pivotal.io/customers
 
+-----------------------------------------------------
+
 ## PCF Architecture, Installation & Set-up 
 
 ![](./images/CaaS_PaaS_FaaS_OSBAPI.png)
 
+-----------------------------------------------------
 
 ### LAB-1: SSH into your Linux Workshop environment & test the Command Line Interface tools
 

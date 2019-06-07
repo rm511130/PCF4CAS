@@ -28,7 +28,7 @@
 - Ability to ssh into Ubuntu VMs with public IP addresses using a private-key file 
 
   e.g. `ssh -i fuse.pem ubuntu@user1.ourpcf.com`
-  - [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem) must be altered using `chmod 400` if it is not set to read-only by owner 
+  - [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem) must be set using `chmod 400` to read-only by owner 
 
 ## Guidelines for this Workshop
 - This workshop includes presentations, demos and hands-on labs.

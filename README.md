@@ -152,7 +152,7 @@ Congratulations, you have completed LAB #3. You have deployed an App into the cl
 
 ### LAB-4: Apps Manager & Ops Manager
 
-In order to help us quickly cover some ground, we will demonstrate the features of Ops Manager `http://opsman.ourpcf.com` to the workshop participants:
+Time is short so we will demonstrate the features of Ops Manager `http://opsman.ourpcf.com` to the workshop participants:
 
 ![](./images/OpsMan.png)
 
@@ -160,7 +160,52 @@ You can access Apps Manager `http://login.sys.ourpcf.com` using your User# and `
 
 ![](./images/AppsMan.png)
 
-Click around to get acquainted with its features.
+We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
+
+### LAB-5: (Optional) PAS can handle Spring Apps and Docker Images
+
+You can `cf push` a couple of additional apps. Assuming that your are logged into your Ubuntu Workshop VM proceed as follows:
+
+```
+cf push factorial --docker-image rmeira/factorial --random-route 
+```
+
+You can test it by using a browser or a `curl` command per the example below:
+
+```
+curl factorial-courteous-toucan.apps.ourpcf.com/6; echo
+```
+
+You should see results similar to this: 
+
+![](./images/docker.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+cd ~   # to make sure you are back to the your home directory
+git clone https://github.com/rm511130/spring-music
+cd spring-music
+./gradlew clean assemble
+cf push
+```
+
+PCF PAS will use its Java Buildpack to create a container with all the dependencies necessary to run your Spring-Music App.
+
+
+
+
+
 
 
 

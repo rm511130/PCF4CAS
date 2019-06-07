@@ -144,13 +144,11 @@ stack:             cflinuxfs3
 buildpacks:        php 4.3.70
 ```
 
-Use a browser to access your URL.
+Access your URL or ask someone to access your URL.
 
-![](./iamges/chess.png)
+![](./images/chess.png)
 
-
-
-
+Congratulations, you have completed LAB #3. You have deployed an App into the cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, DNS entries, firewalls, etc..
 
 
 
@@ -162,4 +160,10 @@ Use a browser to access your URL.
 
 
 
-# 
+
+
+
+
+
+
+

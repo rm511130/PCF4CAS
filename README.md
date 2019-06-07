@@ -1,6 +1,6 @@
 ![](./images//Pivotal.png)
 
-# Pivotal: Transforming How The World Builds Software
+# Transforming How The World Builds Software
 
 ## 06/12/2019 Agenda
 (9:30AM to 3:30PM Breakfast & Lunch Included)

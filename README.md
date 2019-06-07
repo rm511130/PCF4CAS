@@ -38,6 +38,8 @@
 - When carrying out hands-on labs, you can simply cut-&-paste the commands shown `in boxes like this one`. 
 - Please make sure to alter the user-id to match the one you have claimed.
 
+  n.b. `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
+       `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
 
 ## Value Statement
 - Enterprises rely on software to improve business outcomes.

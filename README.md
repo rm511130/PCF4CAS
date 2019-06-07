@@ -45,8 +45,23 @@ https://pivotal.io/customers
 ![](./images/CaaS_PaaS_FaaS_OSBAPI.png)
 
 
+### LAB-1: ssh into your Linux Work environment & test Command Line Interface tools
 
-PCF 101 hands-on and demos workshop involving PAS (Pivotal Application Service) and PKS (Pivotal Container Service)
+Use the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) to claim a user# for this workshop. For example, Ralph Meira is user1.
+
+`$ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com`
+
+Once logged in, execute the following commands:
+
+`pks --version`
+`kubectl version`
+`cf --version`
+
+If all the commands shown above completed without problems, you have successfully completed Lab 1.
+Please update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) with an "x" in the appropriate column.
+
+
+
 
 
 

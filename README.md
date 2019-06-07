@@ -61,7 +61,8 @@ https://pivotal.io/customers
 
 Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI):
 
-```ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
+```
+ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
 ```
 
 Once logged in, execute the following commands:
@@ -73,14 +74,11 @@ pks --version
 ```
 kubectl version
 ```
-
 If you see a connection refused message, don't worry, it is expected and not a problem.
 
 ```
 cf --version
 ```
-
-###### cf version 6.45.0+5f9ff16f9.2019-06-03
 
 If all the commands shown above completed without problems, you have successfully completed Lab 1.
 

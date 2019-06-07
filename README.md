@@ -32,7 +32,8 @@
   - I using Powershell on a Windows machine read these [instructions](https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open)
 
 ## Guidelines for this Workshop
-- This workshop includes presentations, demos and hands-on labs.
+- This workshop includes presentations, demos and hands-on labs. 
+- The labs are interdependent and must be executed in order.
 - Use the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) to claim a user-id for this workshop. For example, Ralph Meira is user1.
 - Update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) as you progress through the Labs, by placing an "x" in the appropriate column.
 - When carrying out hands-on labs, you can simply cut-&-paste the commands shown `in boxes like this one`. 
@@ -80,9 +81,78 @@ If you see a connection refused message, don't worry, it is expected and not a p
 cf --version
 ```
 
-If all the commands shown above completed without problems, you have successfully completed Lab 1.
+```
+git version
+```
+
+If all the commands shown above displayed the CLI versions, you have successfully completed Lab 1.
 
 Please update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) with an "x" in the appropriate column.
+
+If you had to install the pks, kubectl and cf CLIs, you would need to download them from [PivNet](http://network.pivotal.io) and follow the instructions. 
+
+### LAB-2: Connecting to PCF PAS (Pivotal Application Service)
+
+If LAB-1 was successful, you should be logged into an Ubuntu VM on AWS. The following command will get you connected to PCF/PAS (Pivotal Application Service) - make sure to use the correct User# that you have claimed in the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) 
+
+```
+cf login -a api.sys.ourpcf.com --skip-ssl-validation -u user1 -p password
+```
+
+You have landed in an ORG and SPACE that were created just for you to use and manage. ORGs are often used to isolate Business/App Programs and SPACEs are used to isolate DEV, TEST, and PROD. Let's continue:
+
+```
+cf create-space production
+```
+
+Grant a colleague of yours access to your `development` space. In the example below we'll use `user2` but you can pick anyone participating in this workshop.
+
+```
+cf set-space-role user2 org1 development SpaceDeveloper
+cf space-users org1 development
+```
+
+Congratulations, you have completed LAB #2.
+
+
+### LAB-3: The Haiku "Here is my source code, Run it on the cloud for me, I do not care how."
+
+Let's continue from Lab #2 by grabbing some code from github.
+
+```
+cd ~    # just to make sure you are in your home directory
+git clone https://github.com/rm511130/chess; cd chess; ls -las
+```
+
+Your code is in the `cat index.php` file. It's a ♞ Chess Game written in Javascript.
+The `cat manifest.yml` states that your code requires 100MB of RAM and a random URL to avoid collision with other colleagues.
+
+Let's `cf push` your Chess App.
+
+```
+cf push
+```
+
+Once the process has been completed, you should look for the random route URL that PAS created for you. The output will look something like this:
+
+```html
+name:              chess
+requested state:   started
+routes:            chess-intelligent-oryx.apps.ourpcf.com
+last uploaded:     Fri 07 Jun 18:02:10 UTC 2019
+stack:             cflinuxfs3
+buildpacks:        php 4.3.70
+```
+
+Use a browser to access your URL.
+
+![](./iamges/chess.png)
+
+
+
+
+
+
 
 
 

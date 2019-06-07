@@ -64,32 +64,14 @@ Let's start by logging in:
 ```
 $ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
 ```
-<details>
-$ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
-Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1083-aws x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-
-41 packages can be updated.
-18 updates are security updates.
-
-New release 18.04.2 LTS available.
-Run do-release-upgrade to upgrade to it
-
-Last login: Fri Jun  7 16:18:52 2019 from 184.57.164.25
-ubuntu@ip-10-0-0-35:~$
-</details>
-
 
 Once logged in, execute the following commands:
 
-```
-pks --version
+```pks --version
 ```
 
-`kubectl version`
+`kubectl version
+`
 
 `cf --version`
 

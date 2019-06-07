@@ -71,14 +71,14 @@ Once logged in, execute the following commands:
 
 `kubectl version`
 
-Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.5", GitCommit:"2166946f41b36dea2c4626f90a77706f426cdea2", GitTreeState:"clean", BuildDate:"2019-03-25T15:26:52Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+###### Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.5", GitCommit:"2166946f41b36dea2c4626f90a77706f426cdea2", GitTreeState:"clean", BuildDate:"2019-03-25T15:26:52Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+###### The connection to the server localhost:8080 was refused - did you specify the right host or port?
 
-The connection refused message is expected and not a problem
+###### The connection refused message is expected and not a problem
 
 `cf --version`
 
-cf version 6.45.0+5f9ff16f9.2019-06-03
+###### cf version 6.45.0+5f9ff16f9.2019-06-03
 
 If all the commands shown above completed without problems, you have successfully completed Lab 1.
 

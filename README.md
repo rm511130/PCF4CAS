@@ -39,11 +39,6 @@
 - When issuing commands, please make sure to alter the user-id to match the one you have claimed, e.g.:
   - `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
   - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
-- The expected results on the screen will be shown using the following font:
-###### Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1083-aws x86_64)
-###### * Documentation:  https://help.ubuntu.com
-###### * Management:     https://landscape.canonical.com
-###### * Support:        https://ubuntu.com/advantage
 
 ## Pivotal Beliefs: Value Statement
 - Enterprises rely on software to improve business outcomes.
@@ -66,22 +61,24 @@ https://pivotal.io/customers
 
 Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI):
 
-`ssh -i ./fuse.pem ubuntu@user1.ourpcf.com`
+```ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
+```
 
 Once logged in, execute the following commands:
 
-`pks --version`
+```
+pks --version
+```
 
-###### PKS CLI version: 1.4.0-build.194
+```
+kubectl version
+```
 
-`kubectl version`
+If you see a connection refused message, don't worry, it is expected and not a problem.
 
-###### Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.5", GitCommit:"2166946f41b36dea2c4626f90a77706f426cdea2", GitTreeState:"clean", BuildDate:"2019-03-25T15:26:52Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
-###### The connection to the server localhost:8080 was refused - did you specify the right host or port?
-
-###### The connection refused message is expected and not a problem
-
-`cf --version`
+```
+cf --version
+```
 
 ###### cf version 6.45.0+5f9ff16f9.2019-06-03
 

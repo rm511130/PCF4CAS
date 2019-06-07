@@ -57,7 +57,7 @@ https://pivotal.io/customers
 ![](./images/CaaS_PaaS_FaaS_OSBAPI.png)
 
 
-### LAB-1: ssh into your Linux Workshop environment & test Command Line Interface tools
+### LAB-1: SSH into your Linux Workshop environment & test the Command Line Interface tools
 
 Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI):
 

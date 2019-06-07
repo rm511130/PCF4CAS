@@ -42,6 +42,7 @@
 - When issuing commands, please make sure to alter the user-id to match the one you have claimed, e.g.:
   - `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
   - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
+- Don't get stuck. Ask for help. The goal is to learn concepts and understand how Pivotal can help CAS be successful.
 
 -----------------------------------------------------
 
@@ -72,7 +73,7 @@ https://pivotal.io/customers
 
 ### LAB-1: SSH into your Linux Workshop environment & test the Command Line Interface tools
 
-Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI):
+Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI). You will need to use [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem).
 
 ```
 ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
@@ -97,21 +98,23 @@ cf --version
 git version
 ```
 
-If all the commands shown above displayed the CLI versions, you have successfully completed Lab 1.
+If all the commands shown above displayed the CLI versions, you have successfully completed Lab-1.
 
 Please update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) with an "x" in the appropriate column.
 
-If you had to install the pks, kubectl and cf CLIs, you would need to download them from [PivNet](http://network.pivotal.io) and follow the instructions. 
+Note: if you had to install the pks, kubectl and cf CLIs, you would need to download the binary files from [PivNet](http://network.pivotal.io) and place them under `/usr/local/bin` using `chmod +x` to make them executable.
+
+-----------------------------------------------------
 
 ### LAB-2: Connecting to PCF PAS (Pivotal Application Service)
 
-If LAB-1 was successful, you should be logged into an Ubuntu VM on AWS. The following command will get you connected to PCF/PAS (Pivotal Application Service) - make sure to use the correct User# that you have claimed in the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) 
+If LAB-1 was successful, you should be logged into an Ubuntu VM hosted by AWS. The following command will get you connected to PCF/PAS (Pivotal Application Service) - make sure to use the correct User-ID, i.e. the one claimed in the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) 
 
 ```
-cf login -a api.sys.ourpcf.com --skip-ssl-validation -u user1 -p password
+cf login -a api.sys.ourpcf.com --skip-ssl-validation -u user1 -p password      # change -u userX to match your User-ID
 ```
 
-You have landed in an ORG and SPACE that were created just for you to use and manage. ORGs are often used to isolate Business/App Programs and SPACEs are used to isolate DEV, TEST, and PROD. Let's continue:
+You will landed in an ORG and SPACE that were created just for you to use and manage. ORGs are often used to isolate Business/App Programs/Products, and SPACEs are used to isolate Apps in DEV, TEST, and PROD phases. Let's continue:
 
 ```
 cf create-space production
@@ -124,12 +127,13 @@ cf set-space-role user2 org1 development SpaceDeveloper
 cf space-users org1 development
 ```
 
-Congratulations, you have completed LAB #2.
+Congratulations, you have completed LAB-2.
 
+-----------------------------------------------------
 
-### LAB-3: The Haiku "Here is my source code, Run it on the cloud for me, I do not care how."
+### LAB-3: The Developer's Haiku - "Here is my source code, Run it on the cloud for me, I do not care how."
 
-Let's continue from Lab #2 by grabbing some code from github.
+Let's continue from Lab-2 by grabbing some code from github.
 
 ```
 cd ~    # just to make sure you are in your home directory
@@ -175,6 +179,7 @@ Let's recap: you just scaled from 1 to 3 (not a limit) containers running the sa
 
 Congratulations, you have completed LAB #3.
 
+-----------------------------------------------------
 
 ### LAB-4: Apps Manager & Ops Manager
 
@@ -190,6 +195,7 @@ We will also demonstrate the features of Apps Manager, but you are welcome to cl
 
 Congratulations, if you accessed Apps Manager successfully, you have completed Lab #4.
 
+-----------------------------------------------------
 
 ### LAB-5: PAS handles Docker Images and it's the best PaaS for running Spring Apps
 

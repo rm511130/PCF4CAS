@@ -162,15 +162,15 @@ You can access Apps Manager `http://login.sys.ourpcf.com` using your User# and `
 
 We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
 
-### LAB-5: (Optional) PAS can handle Spring Apps and Docker Images
+### LAB-5: (Optional) PAS handles Docker Images and its the best PaaS for running Spring Apps
 
-You can `cf push` a couple of additional apps. Assuming that your are logged into your Ubuntu Workshop VM proceed as follows:
+Assuming that your are logged into your Ubuntu Workshop VM proceed as follows:
 
 ```
 cf push factorial --docker-image rmeira/factorial --random-route 
 ```
 
-You can test it by using a browser or a `curl` command per the example below:
+Once deployed, you can test `factorial` by using a browser or a `curl` command per the example below:
 
 ```
 curl factorial-courteous-toucan.apps.ourpcf.com/6; echo
@@ -181,16 +181,7 @@ You should see results similar to this:
 ![](./images/docker.png)
 
 
-
-
-
-
-
-
-
-
-
-
+Let's `cf push` a Spring Boot application:
 
 ```
 cd ~   # to make sure you are back to the your home directory

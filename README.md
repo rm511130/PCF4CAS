@@ -39,6 +39,7 @@
 - Please make sure to alter the user-id to match the one you have claimed.
 
   n.b. `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
+  
        `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
 
 ## Value Statement

@@ -24,8 +24,17 @@
 
 ## Technical Pre-Requisites
 - Ability to access https://chess.cfapps.io
-- Ability to ssh into VMs with public IP addresses e.g. `ssh ubuntu@test.pcf4u.com`
 - Ability to access and update this [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8)
+- Ability to ssh into VMs with public IP addresses e.g. `ssh -i fuse.pem ubuntu@user1.ourpcf.com`
+
+Note: fuse.pem must be altered by `chmod 400` if it is not set to read-only by owner 
+
+## Guidelines for this Workshop
+- This workshop includes presentations, demos and hands-on labs.
+- Use the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) to claim a user-id for this workshop. For example, Ralph Meira is user1.
+- Update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) as you progress through the Labs, by placing an "x" in the appropriate column.
+- When carrying out hands-on labs, you can simply cut-&-paste the commands shown `in boxes like this one`. 
+- Please make sure to alter the user-id to match the one you have claimed.
 
 
 ## Value Statement
@@ -47,7 +56,7 @@ https://pivotal.io/customers
 
 ### LAB-1: ssh into your Linux Workshop environment & test Command Line Interface tools
 
-Use the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) to claim a user-id for this workshop. For example, Ralph Meira is user1.
+Let's start by logging in:
 
 `$ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com`
 

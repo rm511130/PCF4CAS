@@ -176,10 +176,10 @@ You can access Apps Manager `http://login.sys.ourpcf.com` using your User# and `
 
 We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
 
-If you accessed Apps Manager successfully you can consider Lab #4 as completed.
+Congratulations, if you accessed Apps Manager successfully, you have completed Lab #4.
 
 
-### LAB-5: PAS handles Docker Images and its the best PaaS for running Spring Apps
+### LAB-5: PAS handles Docker Images and it's the best PaaS for running Spring Apps
 
 Assuming that your are logged into your Ubuntu Workshop VM proceed as follows:
 

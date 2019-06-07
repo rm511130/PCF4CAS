@@ -61,11 +61,15 @@ https://pivotal.io/customers
 
 Let's start by logging in:
 
-```$ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com```
+```
+$ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
+```
 
 Once logged in, execute the following commands:
 
-```pks --version```
+```
+pks --version
+```
 
 `kubectl version`
 

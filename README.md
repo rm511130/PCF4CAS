@@ -67,7 +67,7 @@ Once logged in, execute the following commands:
 
 `pks --version`
 
-PKS CLI version: 1.4.0-build.194
+###### PKS CLI version: 1.4.0-build.194
 
 `kubectl version`
 

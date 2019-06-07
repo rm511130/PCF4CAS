@@ -26,7 +26,7 @@
 - Ability to access https://chess.cfapps.io
 - Ability to access and update this [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8)
 - Ability to ssh into VMs with public IP addresses e.g. `ssh -i fuse.pem ubuntu@user1.ourpcf.com`
-  - fuse.pem must be altered using `chmod 400` if it is not set to read-only by owner 
+  - [fuse.pem](./fuse.pem) must be altered using `chmod 400` if it is not set to read-only by owner 
 
 ## Guidelines for this Workshop
 - This workshop includes presentations, demos and hands-on labs.

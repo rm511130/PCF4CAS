@@ -241,6 +241,11 @@ Access `Apps Manager` and take a look at how it has recognized and reconfigured 
 Congratulations, you have completed Lab #5.
 
 
+### LAB-6: Installing the PKS Tile in Ops Manager
+
+- Installimg PKS on any IaaS takes at least 1hr, so please watch this [video]((https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) at your leisure. 
+- During this workshop we will show you all the keep aspects of the installation set-up.
+
 
 
 

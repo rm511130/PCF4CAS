@@ -25,15 +25,13 @@
 - Next Steps
 -----------------------------------------------------
 ## Technical Pre-Requisites
-- This workshop includesxxxxxxxxxxxxxx presentations, demos and hands-on labs. 
-- The labs are interdepxxxxxxxxxxxted in order.
-- Ability to access https://chess.cfapps.io
+- A browser that can access https://chess.cfapps.io
 - Ability to access and update this [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8)
-- Ability to ssh into a Ubuntu VM (public IP address) using a private-key file
+- Ability to SSH into a Ubuntu VM (public IP address) using a private-key file
 
   e.g. `ssh -i fuse.pem ubuntu@user1.ourpcf.com`
   - [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem) must be set using `chmod 400` to read-only by owner
-  - I using Powershell on a Windows machine read these [instructions](https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open)
+  - If using Powershell on a Windows machine read these [instructions](https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open)
 
 ## Guidelines for this Workshop
 - This workshop includes presentations, demos and hands-on labs. 

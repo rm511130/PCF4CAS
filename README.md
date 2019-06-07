@@ -148,7 +148,21 @@ Access your route / URL or ask someone to access it. You should see someything s
 
 ![](./images/chess.png)
 
-Congratulations, you have completed LAB #3. You have deployed an App into the cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, DNS entries, firewalls, etc..
+Let's recap: you have deployed a Chess App into the cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, firewalls, etc..
+
+You can easily scale horizontally by increasing the number of containers running your Chess App, and you can log into any specific container. Let's try this:
+
+```
+cf scale chess -i 3
+cf ssh chess -i 2
+set   
+exit
+```
+
+Let's recap: you just scaled from 1 to 3 (not a limit) containers running the same Chess App. PAS provided automatic loadbalanced routing across all three containers, and you accessed the 3rd container - which is useful for debugging.  
+
+Congratulations, you have completed LAB #3.
+
 
 ### LAB-4: Apps Manager & Ops Manager
 
@@ -162,7 +176,10 @@ You can access Apps Manager `http://login.sys.ourpcf.com` using your User# and `
 
 We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
 
-### LAB-5: (Optional) PAS handles Docker Images and its the best PaaS for running Spring Apps
+If you accessed Apps Manager successfully you can consider Lab #4 as completed.
+
+
+### LAB-5: PAS handles Docker Images and its the best PaaS for running Spring Apps
 
 Assuming that your are logged into your Ubuntu Workshop VM proceed as follows:
 
@@ -191,8 +208,13 @@ cd spring-music
 cf push
 ```
 
-PCF PAS will use its Java Buildpack to create a container with all the dependencies necessary to run your Spring-Music App.
+PCF PAS uses its Java Buildpack to create a container with all the dependencies necessary to run your Spring-Music App.
 
+![](./images/SpringMusic.png)
+
+Access `Apps Manager` and take a look at how it has recognized and reconfigured itself for the Docker and Spring Boot Apps. 
+
+Congratulations, you have completed Lab #5.
 
 
 

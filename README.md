@@ -59,20 +59,14 @@ https://pivotal.io/customers
 
 ### LAB-1: ssh into your Linux Workshop environment & test Command Line Interface tools
 
-Let's start by logging in:
+Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI):
 
-```
-$ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
-```
+`ssh -i ./fuse.pem ubuntu@user1.ourpcf.com`
 
 Once logged in, execute the following commands:
 
-```pks --version
-```
-
-`kubectl version
-`
-
+`pks --version`
+`kubectl version`
 `cf --version`
 
 If all the commands shown above completed without problems, you have successfully completed Lab 1.

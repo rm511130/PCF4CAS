@@ -39,6 +39,11 @@
 - When issuing commands, please make sure to alter the user-id to match the one you have claimed, e.g.:
   - `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
   - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
+- The expected results on the screen will be shown using the following font:
+###### Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1083-aws x86_64)
+###### * Documentation:  https://help.ubuntu.com
+###### * Management:     https://landscape.canonical.com
+###### * Support:        https://ubuntu.com/advantage
 
 ## Pivotal Beliefs: Value Statement
 - Enterprises rely on software to improve business outcomes.

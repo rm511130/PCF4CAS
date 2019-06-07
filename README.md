@@ -154,11 +154,11 @@ Congratulations, you have completed LAB #3. You have deployed an App into the cl
 
 In order to help us quickly cover some ground, we will demonstrate the features of Ops Manager `http://opsman.ourpcf.com` to the workshop participants:
 
-![](./images/opsman.png)
+![](./images/OpsMan.png)
 
 You can access Apps Manager `http://login.sys.ourpcf.com` using your User# and `password` for password.
 
-![](./images/appsman.png)
+![](./images/AppsMan.png)
 
 Click around to get acquainted with its features.
 

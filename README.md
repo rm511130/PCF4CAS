@@ -66,8 +66,19 @@ Let's start by logging into the Workshop environment from your machine (Mac, PC,
 Once logged in, execute the following commands:
 
 `pks --version`
+
+PKS CLI version: 1.4.0-build.194
+
 `kubectl version`
+
+Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.5", GitCommit:"2166946f41b36dea2c4626f90a77706f426cdea2", GitTreeState:"clean", BuildDate:"2019-03-25T15:26:52Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+
+The connection refused message is expected and not a problem
+
 `cf --version`
+
+cf version 6.45.0+5f9ff16f9.2019-06-03
 
 If all the commands shown above completed without problems, you have successfully completed Lab 1.
 

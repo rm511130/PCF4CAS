@@ -65,7 +65,6 @@ Let's start by logging in:
 $ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
 ```
 <details>
-  <summary> </summary>
 $ ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
 Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1083-aws x86_64)
 

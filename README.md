@@ -1,3 +1,5 @@
+![](./images//Pivotal.png)
+
 # Pivotal: Transforming How The World Builds Software
 
 ## 06/12/2019 Agenda

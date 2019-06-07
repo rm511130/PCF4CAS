@@ -36,13 +36,11 @@
 - Use the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) to claim a user-id for this workshop. For example, Ralph Meira is user1.
 - Update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) as you progress through the Labs, by placing an "x" in the appropriate column.
 - When carrying out hands-on labs, you can simply cut-&-paste the commands shown `in boxes like this one`. 
-- Please make sure to alter the user-id to match the one you have claimed.
+- When issuing commands, please make sure to alter the user-id to match the one you have claimed, e.g.:
+  - `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
+  - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
 
-  n.b. `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
-  
-       `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
-
-## Value Statement
+## Pivotal Beliefs: Value Statement
 - Enterprises rely on software to improve business outcomes.
 - They depend on velocity of converting ideas to new features, new applications, new capabilities, and new services.
 - This pace of change is generating a daunting backlog of work for IT leaders, who are also under pressure to reduce technology spend and limit security vulnerabilities.

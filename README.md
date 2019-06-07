@@ -144,14 +144,23 @@ stack:             cflinuxfs3
 buildpacks:        php 4.3.70
 ```
 
-Access your URL or ask someone to access your URL.
+Access your route / URL or ask someone to access it. You should see someything similar to this:
 
 ![](./images/chess.png)
 
 Congratulations, you have completed LAB #3. You have deployed an App into the cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, DNS entries, firewalls, etc..
 
+### LAB-4: Apps Manager & Ops Manager
 
+In order to help us quickly cover some ground, we will demonstrate the features of Ops Manager `http://opsman.ourpcf.com` to the workshop participants:
 
+![](./images/OpsMan.png)
+
+You can access Apps Manager `http://login.sys.ourpcf.com` using your User# and `password` for password.
+
+![](./images/AppsMan.png)
+
+Click around to get acquainted with its features.
 
 
 

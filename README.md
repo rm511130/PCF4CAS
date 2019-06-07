@@ -1,7 +1,7 @@
 # Pivotal: Transforming How The World Builds Software
 
 ## 06/12/2019 Agenda
-### (9:30AM to 3:30PM Breakfast & Lunch Included)
+(9:30AM to 3:30PM Breakfast & Lunch Included)
 
 - Pivotal Mission & Applicability to our Customers
      - Value Statement

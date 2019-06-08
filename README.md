@@ -256,7 +256,7 @@ Congratulations, you have completed Lab-5.
 
 - What enterprise PKS adds to K8s
 
-
+- [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 
 
 

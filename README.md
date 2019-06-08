@@ -248,6 +248,7 @@ Go back to [Apps Manager](http://login.sys.ourpcf.com) and take a look at how it
 
 Congratulations, you have completed Lab-5.
 
+-----------------------------------------------------
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 

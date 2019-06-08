@@ -176,9 +176,9 @@ Access your route / URL or ask someone to access it. You should see someything s
 
 ![](./images/chess.png)
 
-Let's recap: 
-- You have deployed a Chess App into the cloud, without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, firewalls, etc., and you didn't have to open a service ticket. 
-- You can easily scale horizontally by increasing the number of containers running your Chess App, and you can log into any specific container. Let's try this:
+Let's recap: You have deployed a Chess App into the cloud, without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, firewalls, etc., and you didn't have to open a service ticket. 
+
+You can easily scale horizontally by increasing the number of containers running your Chess App, and you can log into any specific container. Let's try this:
 
 ```
 cf scale chess -i 3
@@ -187,19 +187,19 @@ set
 exit
 ```
 
-Let's recap: You just scaled from 1 to 3 (not a limit) containers running the same Chess App. PAS provided automatic loadbalanced routing across all three containers, and you accessed the 3rd container - which is useful for debugging.  
+Let's recap: You just scaled from 1 to 3 (not a limit) containers running the same Chess App. PAS provided automatic loadbalanced routing across all three containers, and you accessed the 3rd container (by using `-i 2`) which is useful for debugging specific issues to any given container type or container instance.
 
-Congratulations, you have completed LAB #3.
+Congratulations, you have completed LAB-3.
 
 -----------------------------------------------------
 
 ### LAB-4: Apps Manager & Ops Manager
 
-Time is short so we will demonstrate the features of Ops Manager `http://opsman.ourpcf.com` to the workshop participants:
+Time is short so we will demonstrate the features of Ops Manager, the operators GUI, `http://opsman.ourpcf.com` to the workshop participants:
 
 ![](./images/OpsMan.png)
 
-You can access Apps Manager `http://login.sys.ourpcf.com` using your User# and `password` for password.
+You can access Apps Manager, the developers GUI, `http://login.sys.ourpcf.com` using your User# and `password` for password.
 
 ![](./images/AppsMan.png)
 
@@ -242,7 +242,7 @@ PCF PAS uses its Java Buildpack to create a container with all the dependencies 
 
 ![](./images/SpringMusic.png)
 
-Access [Apps Manager](http://login.sys.ourpcf.com) and take a look at how it has recognized and reconfigured itself for the Docker and Spring Boot Apps. 
+Go back to [Apps Manager](http://login.sys.ourpcf.com) and take a look at how it has recognized and reconfigured itself for the Docker and Spring Boot Apps. 
 
 Congratulations, you have completed Lab-5.
 

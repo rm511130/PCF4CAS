@@ -25,7 +25,7 @@
 - Next Steps
 -----------------------------------------------------
 ## Technical Pre-Requisites
-- A browser that can access https://chess.cfapps.io
+- A Mac or PC with internet connection, running a browser that can access https://chess.cfapps.io
 - Ability to access and update this [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8)
 - Ability to SSH into a Ubuntu VM (public IP address) using a private-key file
 

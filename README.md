@@ -267,7 +267,7 @@ Congratulations, you have completed Lab-5.
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 
-Lab-6 involves some reading. No actual hands-on keyboard will be necessary until we proceed to Lab-7. This is because the steps we will describe are for Operations to execute during the installation of PKS and during the creation of K8s Clusters.
+Lab-6 involves some reading. No actual hands-on keyboard will be necessary until we proceed to Lab-7. This is because the steps we describe below are for Operations to execute during the installation of PKS and during the creation of K8s Clusters.
 
 - K8s (Kubernetes) is an open-source platform for building platforms. It is a system for automating the deployment, scaling, and management of containerized applications. 
 - Pivotal Container Service (PKS) enables operators to provision, operate, and manage enterprise-grade Kubernetes clusters using BOSH and Pivotal Ops Manager.
@@ -304,7 +304,7 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 ![](./images/intro_to_kubectl.png)
 
-- Anyone with access to `pks_admin` can see any K8s cluster, and that can be a problem. However, `pks_manager` was created with a different scope of responsibility, and it can only see K8s clusters it creates. 
+- Anyone with access to `pks_admin` can see any K8s cluster, and that can pose a security problem. However, `pks_manager` was created with a different scope of responsibility, and it can only see K8s clusters it creates. 
 
 
 

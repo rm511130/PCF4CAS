@@ -304,7 +304,7 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 ![](./images/intro_to_kubectl.png)
 
-
+- Anyone with access to `pks_admin` can see any K8s cluster, and that can be a problem. However, `pks_manager` was created with a different scope of responsibility, and it can only see K8s clusters it creates. 
 
 
 

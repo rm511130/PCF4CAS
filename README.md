@@ -124,7 +124,9 @@ cf login -a api.sys.ourpcf.com --skip-ssl-validation -u user1 -p password      #
 You will landed in an ORG and SPACE that were created just for you to use and manage. ORGs are often used to isolate Business/App Programs/Products, and SPACEs are used to isolate Apps in DEV, TEST, and PROD phases. Let's continue:
 
 ```
-cf create-space production
+cf create-space development
+cf orgs; cf spaces
+cf target -s development
 ```
 
 Grant a colleague of yours access to your `development` space. In the example below we'll use `user2` but you can pick anyone participating in this workshop.
@@ -134,7 +136,9 @@ cf set-space-role user2 org1 development SpaceDeveloper
 cf space-users org1 development
 ```
 
-Congratulations, you have completed LAB-2.
+You have access to PAS (Pivotal Application Service), to an ORG and two spaces that can be used for your projects. You can develop code in the developement SPACE and promote it into the production SPACE.
+
+Congratulations, you have completed LAB-2. 
 
 -----------------------------------------------------
 
@@ -143,6 +147,7 @@ Congratulations, you have completed LAB-2.
 Let's continue from Lab-2 by grabbing some code from github.
 
 ```
+cf target -s development
 cd ~    # just to make sure you are in your home directory
 git clone https://github.com/rm511130/chess; cd chess; ls -las
 ```
@@ -171,9 +176,9 @@ Access your route / URL or ask someone to access it. You should see someything s
 
 ![](./images/chess.png)
 
-Let's recap: you have deployed a Chess App into the cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, firewalls, etc..
-
-You can easily scale horizontally by increasing the number of containers running your Chess App, and you can log into any specific container. Let's try this:
+Let's recap: 
+- You have deployed a Chess App into the cloud, without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, firewalls, etc., and you didn't have to open a service ticket. 
+- You can easily scale horizontally by increasing the number of containers running your Chess App, and you can log into any specific container. Let's try this:
 
 ```
 cf scale chess -i 3
@@ -182,7 +187,7 @@ set
 exit
 ```
 
-Let's recap: you just scaled from 1 to 3 (not a limit) containers running the same Chess App. PAS provided automatic loadbalanced routing across all three containers, and you accessed the 3rd container - which is useful for debugging.  
+Let's recap: You just scaled from 1 to 3 (not a limit) containers running the same Chess App. PAS provided automatic loadbalanced routing across all three containers, and you accessed the 3rd container - which is useful for debugging.  
 
 Congratulations, you have completed LAB #3.
 

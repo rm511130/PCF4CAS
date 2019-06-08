@@ -271,10 +271,15 @@ During this workshop we will show you many the key aspects of the installation a
 
 The major steps in getting to the picture shown above are:
 
-1. Set-up the networking infrastructure: e.g. install NSX-T or run Terraform scripts on IaaS to get Load Balancers, reserve subnets, establish firewalls, service accounts with the correct permissions, etc.
-2. Download Ops Manager from [PivNet](https://network.pivotal.io) and install it on your IaaS
+1. Set-up the networking infrastructure: e.g. install NSX-T or run Terraform scripts on your IaaS to create load balancers, reserve subnets, establish firewalls, service accounts with the correct permissions, etc.
+2. Download the Ops Manager VM bits or Image Metadata from [PivNet](https://network.pivotal.io) and install it on your IaaS
 3. Set-up Ops Manager Director: creating Availability Zones, Networks, etc.
-4. Download PAS and PKS Tiles from [PivNet](https://network.pivotal.io), import into Ops Manager, add, set-up and apply.
+4. Download PAS and PKS Tiles from [PivNet](https://network.pivotal.io), import them into Ops Manager, add, set-up and apply.
+
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
 
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 

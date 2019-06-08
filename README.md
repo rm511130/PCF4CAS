@@ -296,6 +296,10 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 ![](./images/k8s-aws-elb.png)
 
+- Now that we have an ELB created for our 1st K8s cluster, we can create it:
+
+![](./images/create_k8s_cluster.png)
+
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 
 

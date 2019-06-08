@@ -71,9 +71,9 @@
 World-class teams of agile developers, product managers, and designers can adopt the [Pivotal way](https://pivotal.io/labs) of building and deploying software with quality and sustainable velocity in a cost-effective manner. The techniques Pivotal uses and advocates, involve Minimum Viable Products (MVPs), Lean experiments, Identifying & testing assumptions, Data driven decisions, User-centered designs, Prototyping, Pair Programming, Test-Driven Development (TDD), Short Iterations, Continuous Integration and Deployment.
 
 The results are amazing:
-- Building working software at a consistent speed and quality in the face of changing requirements.
-- Ensuring the software solves a real problem for real users in a desirable and usable product.
-- Reducing the risk of building the wrong thing while comfortably changing direction.
+- Build working software at a consistent speed and quality in the face of changing requirements.
+- Ensure the software solves a real problem for real users in a desirable and usable product.
+- Reduce the risk of building the wrong thing while comfortably changing direction.
 
 
 https://pivotal.io/customers
@@ -284,6 +284,11 @@ The major steps in getting to the picture shown above are:
 3. Set-up Ops Manager Director: creating Availability Zones, Networks, etc.
 4. Download PAS and PKS Tiles from [PivNet](https://network.pivotal.io), import them into Ops Manager, add, set-up and apply.
 
+The final set-up details associated with completing the PKS installation and creating your first K8s Cluster:
+
+1. Once the PKS VM is up and running and you have an ELB (Elastic Load Balancer) pointing to it, you will need to create a pks_admin and a pks_manager in the UAA (User Account & Authentication) server running inside the PKS VM.
+
+![](./images/pks_admin_creation.png)
 
 
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)

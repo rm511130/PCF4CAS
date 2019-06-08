@@ -300,6 +300,8 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 ![](./images/create_k8s_cluster.png)
 
+- The K8s Cluster is now ready to be handed over to developers
+
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 
 

@@ -267,8 +267,10 @@ Congratulations, you have completed Lab-5.
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 
+Lab-6 involves some reading. No actual hands-on keyboard will be necessary until we proceed to Lab-7. This is because the steps we will describe are for Operations to execute during the installation of PKS and during the creation of K8s Clusters.
+
 - K8s (Kubernetes) is an open-source platform for building platforms. It is a system for automating the deployment, scaling, and management of containerized applications. 
-- Pivotal Container Service (PKS) enables operators to provision, operate, and manage enterprise-grade Kubernetes clusters using BOSH and Pivotal Ops Manager. N
+- Pivotal Container Service (PKS) enables operators to provision, operate, and manage enterprise-grade Kubernetes clusters using BOSH and Pivotal Ops Manager.
 - Neither of the two is a PaaS.
 
 ![](./images/k8s_and_pks.png)
@@ -277,19 +279,22 @@ During this workshop we will show you many the key aspects of the installation a
 
 ![](./images/bosh_pks_k8s_on_aws.png)
 
-The major steps in getting to the picture shown above are:
+The main steps for the creation of the environment in the diagram shown above are:
 
-1. Set-up the networking infrastructure: e.g. install NSX-T or run Terraform scripts on your IaaS to create load balancers, reserve subnets, establish firewalls, service accounts with the correct permissions, etc.
+1. Set-up the networking infrastructure: e.g. install NSX-T or run Terraform scripts on your IaaS to create load balancers, reserve subnets, establish firewalls, service accounts with the correct permissions.
 2. Download the Ops Manager VM bits or Image Metadata from [PivNet](https://network.pivotal.io) and install it on your IaaS
 3. Set-up Ops Manager Director: creating Availability Zones, Networks, etc.
 4. Download PAS and PKS Tiles from [PivNet](https://network.pivotal.io), import them into Ops Manager, add, set-up and apply.
+    
+Step 4 is shown in the installation video mentioned above, but it merits a deeper dive. Let's take a look at what happens after the PKS VM is up and running, and what steps are necessary to create a K8s cluster.
 
-The final set-up details associated with completing the PKS installation and creating your first K8s Cluster:
-
-1. Once the PKS VM is up and running and you have an ELB (Elastic Load Balancer) pointing to it, you will need to create a pks_admin and a pks_manager in the UAA (User Account & Authentication) server running inside the PKS VM.
+- Once the PKS VM is up and running and you have an ELB (Elastic Load Balancer) pointing to it, you can create a `pks_admin` and a `pks_manager` in the UAA (User Account & Authentication) server running inside the PKS VM.
 
 ![](./images/pks_admin_creation.png)
 
+- Using the AWS Console, let's create an ELB (Elastic Load Balancer) for our first K8s cluster:
+
+![](./images/k8s-aws-elb.png)
 
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 

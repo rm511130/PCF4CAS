@@ -302,6 +302,14 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 - The K8s Cluster is now ready to be handed over to developers
 
+![](./images/intro_to_kubectl.png)
+
+
+
+
+
+
+
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 
 

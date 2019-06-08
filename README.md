@@ -259,7 +259,9 @@ Congratulations, you have completed Lab-5.
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 
-K8s (Kubernetes) is an open-source platform for building platforms. It is a system for automating the deployment, scaling, and management of containerized applications. Pivotal Container Service (PKS) enables operators to provision, operate, and manage enterprise-grade Kubernetes clusters using BOSH and Pivotal Ops Manager. Neither of the two is a PaaS.
+- K8s (Kubernetes) is an open-source platform for building platforms. It is a system for automating the deployment, scaling, and management of containerized applications. 
+- Pivotal Container Service (PKS) enables operators to provision, operate, and manage enterprise-grade Kubernetes clusters using BOSH and Pivotal Ops Manager. N
+- Neither of the two is a PaaS.
 
 ![](./images/k8s_and_pks.png)
 
@@ -267,7 +269,12 @@ During this workshop we will show you many the key aspects of the installation a
 
 ![](./images/bosh_pks_k8s_on_aws.png)
 
+The major steps in getting to the picture shown above are:
 
+1. Set-up the networking infrastructure: e.g. install NSX-T or run Terraform scripts on IaaS to get Load Balancers, reserve subnets, establish firewalls, service accounts with the correct permissions, etc.
+2. Download Ops Manager from [PivNet](https://network.pivotal.io) and install it on your IaaS
+3. Set-up Ops Manager Director: creating Availability Zones, Networks, etc.
+4. Download PAS and PKS Tiles from [PivNet](https://network.pivotal.io), import into Ops Manager, add, set-up and apply.
 
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 

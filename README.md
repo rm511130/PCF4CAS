@@ -41,11 +41,14 @@
 - Use the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) to claim a user-id for this workshop. For example, Ralph Meira is user1.
 - Update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) as you progress through the Labs, by placing an "x" in the appropriate column.
 - When carrying out hands-on labs, you can simply cut-&-paste the commands shown `in boxes like this one`. 
-- When issuing commands, please make sure to alter the user-id to match the one you have claimed, e.g.:
+- However, when issuing commands, please make sure to alter the user-id to match the one you have claimed, e.g.:
   - `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
   - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
 - Don't get stuck. Ask for help. The goal is to learn concepts and understand how Pivotal can help CAS be successful.
 - The PAS and PKS platforms we will be using were created using self-signed certificates, so you will sometimes have to click through warning screens about insecure pages.
+- Each workshop participant will be assigned an Ubuntu VM on AWS which has been readied for the execution of hands-on Labs. Your Laptop or Desktop will be used for two purposes: 
+     - SSH'ing into the Ubuntu VM 
+     - Browsing web pages
 
 -----------------------------------------------------
 
@@ -121,13 +124,13 @@ Pivotal Application Service is the PaaS (Platform as a Service) component of the
 
 ![](./images/pas_diagram.png)
 
-If LAB-1 was successful, you should be logged into an Ubuntu VM hosted by AWS. The following command will get you connected to PCF/PAS (Pivotal Application Service) - make sure to use the correct User-ID, i.e. the one claimed in the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) 
+Assuming you completed LAB-1 successfully, you should be logged into an Ubuntu VM hosted on AWS. Using this VM, change the User_ID in the following command and execute it to connect to PCF/PAS (Pivotal Application Service) - make sure to use the correct User-ID, i.e. the one claimed in the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) 
 
 ```
 cf login -a api.sys.ourpcf.com --skip-ssl-validation -u user1 -p password      # change -u userX to match your User-ID
 ```
 
-You will landed in an ORG and SPACE that were created just for you to use and manage. ORGs are often used to isolate Business/App Programs/Products, and SPACEs are used to isolate Apps in DEV, TEST, and PROD phases. Let's continue:
+You will land in an ORG and SPACE that were created just for you to use and manage during this workshop. ORGs are often used to isolate Business/App-Programs/Products, and SPACEs are used to isolate Apps in DEV, TEST, and PROD phases. Let's continue:
 
 ```
 cf create-space development
@@ -142,7 +145,7 @@ cf set-space-role user2 org1 development SpaceDeveloper
 cf space-users org1 development
 ```
 
-You have access to PAS (Pivotal Application Service), to an ORG and two spaces that can be used for your projects. You can develop code in the developement SPACE and promote it into the production SPACE.
+Let's recap: You have access to PAS (Pivotal Application Service), to an ORG and two spaces that can be used for your projects. You can develop code in the developement SPACE and promote it into the production SPACE.
 
 Congratulations, you have completed LAB-2. 
 
@@ -150,7 +153,7 @@ Congratulations, you have completed LAB-2.
 
 ### LAB-3: The Developer's Haiku - "Here is my source code, Run it on the cloud for me, I do not care how."
 
-Let's continue from Lab-2 by grabbing some code from github.
+Let's continue from Lab-2 by grabbing some code from github. Continue using your Ubuntu VM.
 
 ```
 cf target -s development

@@ -115,7 +115,11 @@ Note: if you had to install the pks, kubectl and cf CLIs, you would need to down
 
 -----------------------------------------------------
 
-### LAB-2: Connecting to PCF PAS (Pivotal Application Service)
+### LAB-2: Connecting to PCF PAS (Pivotal Application Service) 
+
+Pivotal Application Service is the PaaS (Platform as a Service) component of the Pivotal Cloud Foundry ecosystem. It is the best place for developing and running applications (incl. Java, .NET, Spring, Node.js, Go, ...). PAS can be deployed on all major IaaS solutions (vSphere, OpenStack, GCP, AWS and Azure) to deliver a simple and consistent interface to Developers (Apps Manager, CF CLI) and Operators (Ops Manager, CF CLI, Bosh).
+
+![](./images/pas_diagram.png)
 
 If LAB-1 was successful, you should be logged into an Ubuntu VM hosted by AWS. The following command will get you connected to PCF/PAS (Pivotal Application Service) - make sure to use the correct User-ID, i.e. the one claimed in the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) 
 
@@ -252,7 +256,7 @@ Congratulations, you have completed Lab-5.
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 
-K8s (Kubernetes) is an open-source platform for building platforms. It is a system for automating deployment, scaling, and management of containerized applications. Pivotal Container Service (PKS) enables operators to provision, operate, and manage enterprise-grade Kubernetes clusters using BOSH and Pivotal Ops Manager. Neither of the two is a PaaS.
+K8s (Kubernetes) is an open-source platform for building platforms. It is a system for automating the deployment, scaling, and management of containerized applications. Pivotal Container Service (PKS) enables operators to provision, operate, and manage enterprise-grade Kubernetes clusters using BOSH and Pivotal Ops Manager. Neither of the two is a PaaS.
 
 ![](./images/k8s_and_pks.png)
 

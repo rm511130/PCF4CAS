@@ -45,6 +45,7 @@
   - `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
   - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
 - Don't get stuck. Ask for help. The goal is to learn concepts and understand how Pivotal can help CAS be successful.
+- The PAS and PKS platforms we will be using were created using self-signed certificates, so you will sometimes have to click through warning screens about insecure pages.
 
 -----------------------------------------------------
 
@@ -236,16 +237,16 @@ PCF PAS uses its Java Buildpack to create a container with all the dependencies 
 
 ![](./images/SpringMusic.png)
 
-Access `Apps Manager` and take a look at how it has recognized and reconfigured itself for the Docker and Spring Boot Apps. 
+Access [Apps Manager](http://login.sys.ourpcf.com) and take a look at how it has recognized and reconfigured itself for the Docker and Spring Boot Apps. 
 
-Congratulations, you have completed Lab #5.
+Congratulations, you have completed Lab-5.
 
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 
-- Installimg PKS on any IaaS takes at least 1hr, so please watch this [video]((https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) at your leisure. 
-- During this workshop we will show you all the keep aspects of the installation set-up.
+- During this workshop we will show you all the key aspects of the installation and set-up of the PKS Tile. Installimg PKS on any IaaS takes at least 1hr, so please watch this compressed 15min [video]((https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
 
+- What enterprise PKS adds to K8s
 
 
 

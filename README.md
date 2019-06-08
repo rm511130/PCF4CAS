@@ -252,7 +252,18 @@ Congratulations, you have completed Lab-5.
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 
-- During this workshop we will show you all the key aspects of the installation and set-up of the PKS Tile. Installimg PKS on any IaaS takes at least 1hr, so please watch this compressed 15min [video](https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
+- K8s (Kubernetes) is an open-source platform for building platforms. It is a system for automating deployment, scaling, and management of containerized stateless and stateful applications.
+
+![](./images/k8s_and_pks.png)
+
+
+
+
+
+
+- During this workshop we will show you all the key aspects of the installation and set-up of the PKS Tile. However, installimg PKS on any IaaS takes at least 1hr, so please watch this compressed [15min video](https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
+
+- 
 
 - What enterprise PKS adds to K8s
 

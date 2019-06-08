@@ -75,6 +75,8 @@ https://pivotal.io/customers
 
 ![](./images/CaaS_PaaS_FaaS_OSBAPI.png)
 
+- [PKS 1.4 on vSphere](https://drive.google.com/file/d/1Jwytpm-kO0trS-5vAUKRssSVCXv98G0o/view)
+
 
 -----------------------------------------------------
 
@@ -249,7 +251,7 @@ Congratulations, you have completed Lab-5.
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 
-- During this workshop we will show you all the key aspects of the installation and set-up of the PKS Tile. Installimg PKS on any IaaS takes at least 1hr, so please watch this compressed 15min [video]((https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
+- During this workshop we will show you all the key aspects of the installation and set-up of the PKS Tile. Installimg PKS on any IaaS takes at least 1hr, so please watch this compressed 15min [video](https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
 
 - What enterprise PKS adds to K8s
 

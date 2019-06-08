@@ -276,10 +276,7 @@ The major steps in getting to the picture shown above are:
 3. Set-up Ops Manager Director: creating Availability Zones, Networks, etc.
 4. Download PAS and PKS Tiles from [PivNet](https://network.pivotal.io), import them into Ops Manager, add, set-up and apply.
 
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+
 
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 

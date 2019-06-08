@@ -85,7 +85,7 @@ https://pivotal.io/customers
 
 ### LAB-1: SSH into your Linux Workshop environment & test the Command Line Interface tools
 
-Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI). You will need to use [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem).
+Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI). You will need to use the following private key: [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem).
 
 ```
 ssh -i ./fuse.pem ubuntu@user1.ourpcf.com

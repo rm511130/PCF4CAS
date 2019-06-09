@@ -308,7 +308,7 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 ![](./images/pks_manager_k8s_cluster.png)
 
-- The PKS CLI allows administrators to create or delete K8s clusters. It also allows operators to resize (up or down) the number of worker nodes in a K8s clusters.
+- The PKS CLI allows administrators to create or delete K8s clusters. It also allows operators to resize (up or down) the number of worker nodes in K8s clusters, within the limits set for the chosen K8s plans defined during the PKS set-up process.
 
 ```
 $ pks

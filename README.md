@@ -292,19 +292,19 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 ![](./images/pks_admin_creation.png)
 
-- Using the AWS Console, let's create an ELB (Elastic Load Balancer) for our first K8s cluster:
+- Using the AWS Console, let's create an AWS ELB (Elastic Load Balancer) in preparation for the creation of our first K8s cluster:
 
 ![](./images/k8s-aws-elb.png)
 
-- Now that we have an ELB created for our 1st K8s cluster, we can create it:
+- Now that we have an ELB created for the K8s cluster we are about to create:
 
 ![](./images/create_k8s_cluster.png)
 
-- The K8s Cluster is now ready to be handed over to developers
+- The K8s Cluster is now almost ready to be handed over to developers whose tool of choice will be the **kubectl** CLI.
 
 ![](./images/intro_to_kubectl.png)
 
-- Anyone with access to the `pks_admin` username and password is able to see all K8s clusters and that can pose a security problem. But you may recall that we also created a `pks_manager` with a different scope of responsibility which only allows it to see and manage clusters it creates. Let's see this is action:
+- Note that anyone with access to the `pks_admin` username and password is able to control all K8s clusters. We need more granularity for proper isolation between different software product development groups. You may recall that we also created a `pks_manager` with a different scope of responsibility - `pks.clusters.manage` - which limits the `pks_manager` (usually an operator) to see and manage clusters it creates. Let's see this is action:
 
 ![](./images/pks_manager_k8s_cluster.png)
 
@@ -348,9 +348,14 @@ Flags:
 Use "pks [command] --help" for more information about a command.
 ```
 
-Let's Recap: Lab-6 allowed you see the PKS installation steps as well as the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also help retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
+- The PKS set-up screens allow for LDAP integration which we are not using during this workshop. So we have also set up every developer's user-id directly in the PKS UAA database using commands similar to the one shown below:
 
-In the next lab we will hand-over the managed control of K8s clusters to developers.
+![](./images/add_users_to_pks_uaa.png)
+
+
+**Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also help retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
+
+In the next lab we will hand-over the K8s clusters to developers.
 
 -----------------------------------------------------
 

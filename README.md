@@ -365,7 +365,7 @@ In this lab we will cover the creation of namespaces, user roles and how to perf
 
 ![](./images/create_namespace_role_rolebinding.png)
 
-Looking at the steps shown above, working from the bottom-up, we see that:
+Looking at the steps shown above, working from the bottom-up, we see that: 
 
 - `user1` was given the role `ns-admin` in `namespace01`
 - The role `ns-admin` was created with full admin controls (apiGroups, resources and verbs) over `namespace01`

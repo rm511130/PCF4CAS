@@ -372,9 +372,58 @@ Looking at the steps shown above, working from the bottom-up, we see that:
 - `namespace01` was created by `pks_manager` in the `pks_managers_cluster`
 - And as you may recall, the K8s cluster named `pks_managers_cluster` was created by `pks_manager` using the `small` PKS plan: i.e. 1 Master and 3 Worker Nodes
 
-Not shown here: We created namespaces01, 02, ... 25 respectively for each user1, user2 ... user25
+Not shown here: We created namespaces1, namespace2, ... namespace25 respectively for each user1, user2 ... user25
 
-The next few steps are for everyone in the workshop to execute using their Ubuntu VMs on AWS:
+The next few steps are for everyone in the workshop to execute using their Ubuntu VMs on AWS, their user-IDs and the namespace# that corresponds to your user-ID. For example: `user23` should use `namespace23`.
+
+1. Using your Ubuntu VM (and remembering to use the correct UserID) log into PKS to get the Kube Configuration for the `pks_managers_cluster`:
+
+```
+pks get-kubeconfig pks_managers_cluster -u user1 -p password -a https://api.pks.ourpcf.com -k
+```
+
+2. Take a look at the file `cat ~/.kube/config`
+
+3. Create a local `nginx-example-deployment.yaml` file with the following content:
+
+```
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod-nginx.yaml, the name is not included in the 
+      # meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+```
+
+4. Execute the following command to create the NGINX deployment defined above (**make sure to use your own namespace#**):
+
+```
+kubectl create -f nginx-example-deployment.yaml -n namespace1
+```
+
+5. Take a look at your brand new deployment, but note that you do not have access to node information:
+
+```
+kubectl get nodes
+kubectl get pods -n namespace1
+kubectl get deployments -n namespace1
+```
 
 
 

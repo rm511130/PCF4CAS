@@ -308,7 +308,146 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 ![](./images/pks_manager_k8s_cluster.png)
 
-- Let's take a look at a few additional commands
+- The PKS CLI allows administrators to create or delete K8s clusters. It also allows operators to resize (up or down) the number of worker nodes in a K8s clusters.
+
+```
+$ pks
+
+The Pivotal Container Service (PKS) CLI is used to create, manage, and delete Kubernetes clusters. To deploy workloads to a Kubernetes cluster created using the PKS CLI, use the Kubernetes CLI, kubectl.
+
+Version: 1.4.0-build.194
+
+Usage:
+  pks [command]
+
+Available Commands:
+  cluster                View the details of the cluster
+  clusters               Show all clusters created with PKS
+  create-cluster         Creates a kubernetes cluster, requires cluster name, an external host name, and plan
+  create-network-profile Create a network profile
+  create-sink            Creates a sink for sending all log data to syslog://
+  delete-cluster         Deletes a kubernetes cluster, requires cluster name
+  delete-network-profile Delete a network profile
+  delete-sink            Deletes a sink from the given cluster
+  get-credentials        Allows you to connect to a cluster and use kubectl
+  get-kubeconfig         Allows you to get kubeconfig for your username
+  help                   Help about any command
+  login                  Log in to PKS
+  logout                 Log out of PKS
+  network-profile        View a network profile
+  network-profiles       Show all network profiles created with PKS
+  plans                  View the preconfigured plans available
+  resize                 Changes the number of worker nodes for a cluster
+  sinks                  List sinks for the given cluster
+  update-cluster         Updates the configuration of a specific kubernetes cluster
+
+Flags:
+  -h, --help      help for pks
+      --version   version for pks
+
+Use "pks [command] --help" for more information about a command.
+```
+
+Let's Recap: Lab-6 allowed you see the PKS installation steps as well as the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helped retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
+
+In the next lab we will hand-over the managed control of K8s clusters to developers.
+
+-----------------------------------------------------
+
+### LAB-7: Namespaces and Role Binding for Developer Access
+
+In this lab we will cover cluster access, the creation of namespaces and role binding. You will get hands-on in a few minutes, but the first few steps are the responsibility of Operators and Administrators of the PKS platform.
+
+== Cluster Access
+
+. In the newly created cluster or existing cluster, log in as the cluster manager (or admin in case of existing cluster). The steps are the same irrespective of the role. 
+
+----
+pks login -a https://api.pks.pcf4labs.com -u westpksmanager -k
+
+Password: ********
+API Endpoint: https://api.pks.pcf4labs.com
+User: westpksmanager
+----
+
+. Now we will run the get-credentials command so that this user can get the credentials to access the cluster. The credentials and cluster info comes as a config file that is created or appended by the get-credentials command.
+
+----
+pks get-credentials workshop-cluster
+
+Fetching credentials for cluster workshop-cluster.
+Password: ********
+Context set for cluster workshop-cluster.
+
+You can now switch between clusters by using:
+$kubectl config use-context <cluster-name>
+----
+
+== Create custom developer role, k8s namespaces and role binding
+
+* Now that the cluster manager (or admin) has PKS cluster access, for the purpose of this workshop, we will create a UAA user. This will simulate developers that can access this cluster. In reality, there would be either LDAP, SAML or SSO integration in place that will be mapped to UAA.
+
+
+
+* Create UAA user 
+
+----
+uaac user add dev1 -p password --emails dev1@example.com 
+user account successfully added
+----
+
+* Create the k8s namespace 
+
+----
+kubectl create namespace namespace01
+namespace "namespace01" created
+----
+
+* Create a role reference definition file (role-namespace-admin.yaml) and apply it for this namespace.
+
+----
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: ns-admin
+rules:
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: ["*"]
+----
+
+Run the following command to apply it against the namespace
+
+----
+kubectl create -f role-namespace-admin.yaml -n namespace01
+role "ns-admin" created
+----
+
+* Create a role binding file (rb-namespace01-admin.yaml) that maps the *dev1* user to this role and allows access to the k8s namespace.
+
+----
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: ns-admins
+  namespace: namespace01
+subjects:
+  - kind: User
+    name: dev1
+roleRef:
+  kind: Role
+  name: ns-admin
+  apiGroup: rbac.authorization.k8s.io
+----
+
+Apply it against the k8s namespace
+
+----
+kubectl create -f rb-namespace01-admin.yaml
+rolebinding "ns-admins" created
+----
+
+
 
 
 

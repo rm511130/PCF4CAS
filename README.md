@@ -361,7 +361,7 @@ In the next lab we will hand-over a K8s cluster to developers.
 
 ### LAB-7: Namespaces and Role Binding for Developer Access
 
-In this lab we will cover cluster access, the creation of namespaces and role binding. You will get hands-on in a few minutes, but the first few steps are the responsibility of Operators and Administrators of the PKS platform.
+In this lab we will cover cluster access, the creation of namespaces and role binding. You will get to perform some hands-on work in a few minutes, but first we haave a few steps for the Operators and Administrators of the PKS platform.
 
 == Cluster Access
 

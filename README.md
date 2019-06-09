@@ -348,7 +348,7 @@ Flags:
 Use "pks [command] --help" for more information about a command.
 ```
 
-Let's Recap: Lab-6 allowed you see the PKS installation steps as well as the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helped retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
+Let's Recap: Lab-6 allowed you see the PKS installation steps as well as the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also help retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
 
 In the next lab we will hand-over the managed control of K8s clusters to developers.
 

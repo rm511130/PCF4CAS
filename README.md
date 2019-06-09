@@ -361,96 +361,11 @@ In the next lab we will hand-over a K8s cluster to developers.
 
 ### LAB-7: Namespaces and Role Binding for Developer Access
 
-In this lab we will cover cluster access, the creation of namespaces and role binding. You will get to perform some hands-on work in a few minutes, but first we haave a few steps for the Operators and Administrators of the PKS platform.
+In this lab we will cover the creation of namespaces, user roles and how to perform role binding. As a developer, uou will get to perform some hands-on work, but first we have a few steps for the Operators and Administrators of the PKS platform.
 
-== Cluster Access
-
-. In the newly created cluster or existing cluster, log in as the cluster manager (or admin in case of existing cluster). The steps are the same irrespective of the role. 
-
-----
-pks login -a https://api.pks.pcf4labs.com -u westpksmanager -k
-
-Password: ********
-API Endpoint: https://api.pks.pcf4labs.com
-User: westpksmanager
-----
-
-. Now we will run the get-credentials command so that this user can get the credentials to access the cluster. The credentials and cluster info comes as a config file that is created or appended by the get-credentials command.
-
-----
-pks get-credentials workshop-cluster
-
-Fetching credentials for cluster workshop-cluster.
-Password: ********
-Context set for cluster workshop-cluster.
-
-You can now switch between clusters by using:
-$kubectl config use-context <cluster-name>
-----
-
-== Create custom developer role, k8s namespaces and role binding
-
-* Now that the cluster manager (or admin) has PKS cluster access, for the purpose of this workshop, we will create a UAA user. This will simulate developers that can access this cluster. In reality, there would be either LDAP, SAML or SSO integration in place that will be mapped to UAA.
+![](./images/create_namespace_role_rolebinding.png)
 
 
-
-* Create UAA user 
-
-----
-uaac user add dev1 -p password --emails dev1@example.com 
-user account successfully added
-----
-
-* Create the k8s namespace 
-
-----
-kubectl create namespace namespace01
-namespace "namespace01" created
-----
-
-* Create a role reference definition file (role-namespace-admin.yaml) and apply it for this namespace.
-
-----
-kind: Role
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: ns-admin
-rules:
-  - apiGroups: ["*"]
-    resources: ["*"]
-    verbs: ["*"]
-----
-
-Run the following command to apply it against the namespace
-
-----
-kubectl create -f role-namespace-admin.yaml -n namespace01
-role "ns-admin" created
-----
-
-* Create a role binding file (rb-namespace01-admin.yaml) that maps the *dev1* user to this role and allows access to the k8s namespace.
-
-----
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: ns-admins
-  namespace: namespace01
-subjects:
-  - kind: User
-    name: dev1
-roleRef:
-  kind: Role
-  name: ns-admin
-  apiGroup: rbac.authorization.k8s.io
-----
-
-Apply it against the k8s namespace
-
-----
-kubectl create -f rb-namespace01-admin.yaml
-rolebinding "ns-admins" created
-----
 
 
 

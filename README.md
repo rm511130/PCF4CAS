@@ -304,7 +304,7 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 
 ![](./images/intro_to_kubectl.png)
 
-- Anyone with access to the `pks_admin` username and password is able to see all K8s clusters and that can pose a security problem. However, we also created `pks_manager` with a different scope of responsibility which only allows it to see and manage clusters it creates. Let's experiment:
+- Anyone with access to the `pks_admin` username and password is able to see all K8s clusters and that can pose a security problem. But you may recall that we also created a `pks_manager` with a different scope of responsibility which only allows it to see and manage clusters it creates. Let's see this is action:
 
 ![](./images/pks_manager_k8s_cluster.png)
 

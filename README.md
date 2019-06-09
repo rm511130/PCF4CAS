@@ -275,7 +275,7 @@ Lab-6 involves some reading. No actual hands-on keyboard will be necessary until
 
 ![](./images/k8s_and_pks.png)
 
-During this workshop we will show you many the key aspects of the installation and set-up of the PKS Tile and the creation and management of K8s clusters. However, installimg PKS on any IaaS takes at least 1hr, so please watch this compressed [15min video](https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
+During this workshop we will show you many key aspects of the installation and set-up of the PKS Tile and the creation and management of K8s clusters. However, installimg PKS on any IaaS takes at least 1hr, so please watch this compressed [15min video](https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
 
 ![](./images/bosh_pks_k8s_on_aws.png)
 

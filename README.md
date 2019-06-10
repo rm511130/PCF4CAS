@@ -247,15 +247,19 @@ Congratulations, you have completed LAB-3.
 
 ### LAB-4: Apps Manager & Ops Manager
 
-Time is short so we will demonstrate the features of Ops Manager, the operators GUI, `http://opsman.ourpcf.com` to the workshop participants:
+Ops Manager is the operator's GUI. Workshop participants will find it at `http://opsman.ourpcf.com` but there's no need to perform any developer-related steps in Ops Manager. The images below show the key features of Ops Manager and we will describe them to you once the workshop gets to Lab-4.
 
 ![](./images/OpsMan.png)
 
-You can access Apps Manager: it's the developers GUI located at `http://login.sys.ourpcf.com`. You will need to log in using your User# and `password` for password. We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
+PivNet is the name commonly used when we refer to `https://network.pivotal.io`. PivNet is the source of all Software Bits from Pivotal and Third Party vendors. You can also download buildpacks, stemcells and Pivotal Data Products from PivNet.
+
+![](./images/PivNet.png)
+
+And for the hands-on part of Lab-4, please access Apps Manager using a browser. Apps Manager is the developers' GUI. It can be found at `http://login.sys.ourpcf.com`. You will need to log-in using your User# and `password` for password. We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
 
 ![](./images/AppsMan.png)
 
-**Let's recap:** In Lab-4 you saw two PCF/PAS GUIs. Apps Manager for Developers, and Ops Manager for Operators. Apps Manager is a containerized App running on PCF/PAS; it's rich in functionality and easy to navigate. Ops Manager allows operators to install, update and upgrade PAS services at any point in time during normal work-hours, without asking Developers to stop their activities.
+**Let's recap:** In Lab-4 you saw two PCF/PAS GUIs; Apps Manager for Developers, and Ops Manager for Operators. Apps Manager is a containerized App running on PCF/PAS; it's rich in functionality and easy to navigate. Ops Manager allows operators to install, update and upgrade PAS services at any point in time during normal work-hours, without asking Developers to stop their activities. You also saw PivNet - the source of all software releases, patches and updates.
 
 Congratulations, if you accessed Apps Manager successfully, you have completed Lab #4. Leave your Apps Manager browser window open because we will come back to it again. 
 

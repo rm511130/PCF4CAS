@@ -421,9 +421,17 @@ kubectl create -f nginx-example-deployment.yaml -n namespace1
 
 ```
 kubectl get nodes
-kubectl get pods -n namespace1
 kubectl get deployments -n namespace1
+kubectl get pods -n namespace1 -o wide
 ```
+
+**Let's reca:** Using your UserID, you were able to deploy 2 K8s pods running NGINX to the a namespace unique to your UserID in a small K8s cluster named `pks_managers_cluster`.
+
+Congratulations, you have completed Lab-7.
+
+-----------------------------------------------------
+
+### LAB-8: Namespaces and Role Binding for Developer Access
 
 
 

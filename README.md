@@ -193,18 +193,34 @@ Access your route / URL or ask someone to access it. You should see someything s
 
 ![](./images/chess.png)
 
-Let's recap: You have deployed a Chess App into the cloud, without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, firewalls, etc., and you didn't have to open a service ticket. 
+Let's recap: You have deployed a Chess App into the cloud, without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, app health-management, HA considerations, cloud infrastructure provider, CVE (Common Vulnerabilities and Exposures), firewalls, etc., and you didn't have to open a service ticket. 
 
-You can easily scale horizontally by increasing the number of containers running your Chess App, and you can log into any specific container. Let's try this:
+You can easily scale your App Instances:
+- horizontally, by increasing the number of containers running your Chess App (see example below)
+- or vertically, by adding more memory or disk-space to your containers
+and you can log into any specific container. Let's try this:
 
 ```
 cf scale chess -i 3
 cf ssh chess -i 2
-set   
-exit
+ps -ef
 ```
 
-Let's recap: You just scaled from 1 to 3 (not a limit) containers running the same Chess App. PAS provided automatic loadbalanced routing across all three containers, and you accessed the 3rd container (by using `-i 2`) which is useful for debugging specific issues to any given container type or container instance.
+While still ssh'ed into one of the three Chess App containers, look for the lowest PID corresponding to the `diego-sshd` process. In the example shown below, the PID we are looking for is `15`. In your case it may be another number.
+Issue a `kill` command on the `diego-sshd` PID per the example below.
+
+![](./images/kill.png)
+
+Now try the following commands:
+
+```
+cf events chess
+cf app chess
+```
+
+You should see in the events log that the App crash was logged as an event, and the second command, `cf apps` will show you that PCF/PAS has already spawned a new container of the Chess App for you, maintaining the 3 out of 3 containers running as you had requested.
+
+**Let's recap:** You just scaled the number of containers running the same Chess App. PAS provided automatic loadbalanced routing across all three containers, and you accessed the 3rd container (by using `-i 2`) which is useful for debugging specific issues to any given container type or container instance. You simulated an App Crash and saw how PCF/PAS remediated the issue within seconds.
 
 Congratulations, you have completed LAB-3.
 

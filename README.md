@@ -323,7 +323,7 @@ If you now refresh your Spring-Music Browser you should see the following change
 
 If you are curious about the coding aspects of how Spring-Music consumed the MySQL service, you can take a look at the files under this directory: `/home/ubuntu/spring-music/src/main/java/org/cloudfoundry/samples/music/config/`
 
-**Let's Recap:** Lab-5 didn't take very long and yet you accomplished some significant outcomes - as a developer, you were able to push a Docker Image of a service written in Go and you used Gradle and the CF CLI to push a Spring Boot App. You created a dedicated MySQL DB instance and bound you Spring-Music application to it. After restaging Spring-Music, you verified that it was now using the MySQL DB.
+**Let's Recap:** Lab-5 didn't take very long and yet you accomplished some significant outcomes - as a developer, you were able to push a Docker Image and a Spring Boot App. You created a dedicated MySQL DB instance and bound your Spring-Music application to it. 
 
 Let's tidy up so we're not consuming lots of AWS resources:
 
@@ -334,6 +334,8 @@ cf delete chess
 cf delete factorial
 cf delete spring-music
 ```
+
+**Quick Recap:** You accomplished quite a bit just now. The unwiring of application performance monitoring, log monitoring, and health-check services for three different Apps. You also deleted a database, DNS entries, routing information, VM and containers. You also revoked user access to your Apps. These can be tedious and time consuming efforts, and yet, you just - as a developer - completed these tasks without opening any support tickets. 
 
 Congratulations, you have completed Lab-5.
 

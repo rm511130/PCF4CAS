@@ -458,7 +458,7 @@ The next few steps are for everyone in the workshop to execute using their Ubunt
 pks get-kubeconfig pks_managers_cluster -u user1 -p password -a https://api.pks.ourpcf.com -k
 ```
 
-2. Take a look at the file `cat ~/.kube/config`
+2. Take a look at the file `cat ~/.kube/config` that was created by Step 1.
 
 3. Create a local `nginx-example-deployment.yaml` file with the following content:
 
@@ -501,7 +501,43 @@ kubectl get deployments -n namespace1
 kubectl get pods -n namespace1 -o wide
 ```
 
-**Let's reca:** Using your UserID, you were able to deploy 2 K8s pods running NGINX to the a namespace unique to your UserID in a small K8s cluster named `pks_managers_cluster`.
+6. Let's also create and access a simple Ubuntu container. Make sure to use the correct namespace.
+
+```
+kubectl run -i --tty ubuntu --image=ubuntu:18.04 --restart=Never -n namespace1 -- /bin/bash -il
+root@ubuntu:/# lscpu | grep CPU
+root@ubuntu:/# cat /etc/os-release
+root@ubuntu:/# free -h
+root@ubuntu:/# df -h
+root@ubuntu:/# exit
+kubectl delete pod ubuntu -n namespace1
+```
+
+7. Let's now try to deploy and access a Docker image:
+
+```
+kubectl run factorial --replicas=3 -n namespace1 --image=rmeira/factorial
+kubectl expose deployment factorial -n namespace1 --type=NodePort --port=80 --target-port=3000 --name=factorial
+kubectl get service factorial -n namespace1
+kubectl get pods -n namespace1
+```
+
+In order to test the deployment of your Factorial Docker Image, you will use a `curl` command that will point at one of the K8s cluster worker nodes using the port mapping that the `kubectl get service factorial -n namespace1` command gave you.
+
+Follow the `curl` command example shown below, but make sure to use the correct port #:
+
+![](./images/kubectl_factorial.png)
+
+
+Clean up
+
+```
+kubectl delete deployment factorial -n namespace1
+kubectl delete service factorial -n namespace1
+kubectl get pods -n namespace1
+```
+
+**Let's reca:** Using your UserID, you were able to deploy 2 pods running NGINX to the a namespace unique to your UserID in a small Kubernetes cluster named `pks_managers_cluster`. You were also able to deploy, access and delete an Ubuntu 18.04 Docker image, and a Factorial Docker image.
 
 Congratulations, you have completed Lab-7.
 

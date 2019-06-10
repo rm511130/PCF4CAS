@@ -432,12 +432,16 @@ Use "pks [command] --help" for more information about a command.
 
 ![](./images/add_users_to_pks_uaa.png)
 
-- To conclude Lab-6, let's take a look at the `kubernetes-dashboard` service that every K8s cluster has running in its `kube-system` namespace. The following steps were taken to retrieve address, ports and token we will need to access the `kubernetes-dashboard` for the `pks_managers_cluster` K8s cluster.
+- To conclude Lab-6, let's take a look at the `kubernetes-dashboard` service that every K8s cluster has running in its `kube-system` namespace. 
+- The following steps were taken to retrieve worker node IP addresses, the service TCP port, and an access-token that we will need to access the `kubernetes-dashboard` for the `pks_managers_cluster` K8s cluster.
 
 ![](./images/k8s_dashboard.png)
 
+- So we now know that the `pks_managers_cluster` K8s cluster is running on worker nodes with IP Addresses `10.0.10.5, 10.0.8.7 and 10.0.9.5`. We can use the IP addresses to determine their IDs in the AWS Console or we can use Bosh commands to retrieve the same information.
+- Note also that the TCP port number `31577` is how we can access the `kubernetes-dashboard`, so we need an AWS ELB that will point us to the worker nodes on their port `31577`. 
+- We will also need to make sure that AWS Security Groups allow the ELB to communicate over port `31577` to the worker nodes.
 
-
+![](./images/aws_setup_4_k8s_dashboard.png)
 
 
 **Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.

@@ -198,6 +198,7 @@ Let's recap: You have deployed a Chess App into the cloud, without having to wor
 You can easily scale your App Instances:
 - horizontally, by increasing the number of containers running your Chess App (see example below)
 - or vertically, by adding more memory or disk-space to your containers
+
 and you can log into any specific container. Let's try this:
 
 ```

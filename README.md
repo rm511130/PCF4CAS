@@ -242,11 +242,9 @@ Time is short so we will demonstrate the features of Ops Manager, the operators 
 
 ![](./images/OpsMan.png)
 
-You can access Apps Manager, the developers GUI, `http://login.sys.ourpcf.com` using your User# and `password` for password.
+You can access Apps Manager: it's the developers GUI located at `http://login.sys.ourpcf.com`. You will need to log in using your User# and `password` for password. We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
 
 ![](./images/AppsMan.png)
-
-We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
 
 Congratulations, if you accessed Apps Manager successfully, you have completed Lab #4.
 

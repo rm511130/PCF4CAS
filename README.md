@@ -153,15 +153,24 @@ cf set-space-role user2 org1 development SpaceDeveloper
 cf space-users org1 development
 ```
 
-Let's recap: You have access to PAS (Pivotal Application Service), to an ORG and two spaces that can be used for your projects. You can develop code in the developement SPACE and promote it into the production SPACE.
+Let's see how many languages is PCF/PAS able to support out-of-the-box:
+```
+cf buildpacks
+```
+
+The list is actually much longer. Take a look at: https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks
+
+
+**Let's recap:** You have access to PAS (Pivotal Application Service), to an ORG and two spaces that can be used for your projects. You can develop code in the developement SPACE and promote it into the production SPACE. You have used RBAC (Role Based Access Controls) to give another developer access to your development SPACE. You validated that PAS supports many development languages.
 
 Congratulations, you have completed LAB-2. 
 
 -----------------------------------------------------
 
-### LAB-3: The Developer's Haiku - "Here is my source code, Run it on the cloud for me, I do not care how."
+### LAB-3: "Here is my source code, Run it on the cloud for me, I do not care how."
+### .      - The Developer's Haiku
 
-Let's continue from Lab-2 by grabbing some code from github. Continue using your Ubuntu VM.
+Let's continue from Lab-2 by cloning some code from github. You should continue to use your Ubuntu VM.
 
 ```
 cf target -s development
@@ -178,7 +187,7 @@ Let's `cf push` your Chess App.
 cf push
 ```
 
-Once the process has been completed, you should look for the random route URL that PAS created for you. The output will look something like this:
+The previous command builds and runs a container for you. Once the process has been completed, you should look for the random route URL that PAS created for you. The output will look something like this:
 
 ```html
 name:              chess
@@ -189,13 +198,13 @@ stack:             cflinuxfs3
 buildpacks:        php 4.3.70
 ```
 
-Access your route / URL or ask someone to access it. You should see someything similar to this:
+Access _your_ route / URL or ask someone to access it. You should see someything similar to this:
 
 ![](./images/chess.png)
 
-**Let's recap:** You have deployed a Chess App into the cloud, without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, app health-management, HA considerations, cloud infrastructure provider, CVE (Common Vulnerabilities and Exposures), firewalls, etc., and you didn't have to open a service ticket. 
+**Let's recap:** You have deployed the Chess App code into a public cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, app health-management, HA considerations, cloud infrastructure provider, CVE (Common Vulnerabilities and Exposures), firewalls, etc., and you didn't have to open a service ticket. 
 
-You can easily scale your App Instances:
+Let's proceed. You can easily scale your App Instances:
 - horizontally, by increasing the number of containers running your Chess App (see example below)
 - or vertically, by adding more memory or disk-space to your containers
 
@@ -246,13 +255,24 @@ You can access Apps Manager: it's the developers GUI located at `http://login.sy
 
 ![](./images/AppsMan.png)
 
-Congratulations, if you accessed Apps Manager successfully, you have completed Lab #4.
+**Let's recap:** In Lab-4 you saw two PCF/PAS GUIs. Apps Manager for Developers, and Ops Manager for Operators. Apps Manager is a containerized App running on PCF/PAS; it's rich in functionality and easy to navigate. Ops Manager allows operators to install, update and upgrade PAS services at any point in time during normal work-hours, without asking Developers to stop their activities.
+
+Congratulations, if you accessed Apps Manager successfully, you have completed Lab #4. Leave your Apps Manager browser window open because we will come back to it again. 
 
 -----------------------------------------------------
 
-### LAB-5: PAS handles Docker Images and it's the best PaaS for running Spring Apps
+### LAB-5: PAS provides Services, runs Docker Images and Spring Apps
 
-Assuming that your are logged into your Ubuntu Workshop VM proceed as follows:
+Let's start by requesting a MySQL DB instance. Assuming that your are still logged into your Ubuntu Workshop VM proceed as follows:
+
+```
+cf marketplace
+cf create-service p.mysql db-small user1-db     # make sure to use a unique name e.g. user2-db, user3-db, etc
+cf services
+cf service user1-db
+```
+
+Bosh is busy working on instantiating your MySQL database, so let's proceed by pushing a Docker image of a simple App written in Go while we wait for the MySQL DB (it should only take a few minutes).
 
 ```
 cf push factorial --docker-image rmeira/factorial --random-route 
@@ -268,15 +288,14 @@ You should see results similar to this:
 
 ![](./images/docker.png)
 
-As you can see, deploying Docker Images to PCF/PAS is simple and easy. You continue to benefit from all the same PAS features described in the previous lab: e.g. application monitoring, health-management, scaling, logging, routing, event tracking, etc.
+** Quick Recap:** Deploying Docker images to PCF/PAS is simple and easy. You continue to benefit from all the same PAS features described in the previous lab: e.g. application monitoring, health-management, scaling, logging, routing, event tracking, etc.
 
 Let's `cf push` a Spring Boot application:
 
 ```
 cd ~   # to make sure you are back to the your home directory
 git clone https://github.com/rm511130/spring-music
-cd spring-music
-./gradlew clean assemble
+cd spring-music; ./gradlew clean assemble
 cf push
 ```
 ![](./images/buildpack.png)
@@ -288,6 +307,10 @@ PCF PAS uses its Java Buildpack to create a container with all the dependencies 
 Go back to [Apps Manager](http://login.sys.ourpcf.com) and take a look at how it has recognized and reconfigured itself for the Docker and Spring Boot Apps. 
 
 ![](./images/AppMan_Recog_Docker_Spring_Apps.png)
+
+wip
+
+**Let's Recap:** Lab-5 didn't take very long and yet you accomplished some significant outcomes - as a developer, you were able to push a Docker Image of a service written in Go and you used Gradle and the CF CLI to push a Spring Boot App.
 
 Congratulations, you have completed Lab-5.
 

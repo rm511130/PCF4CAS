@@ -432,6 +432,13 @@ Use "pks [command] --help" for more information about a command.
 
 ![](./images/add_users_to_pks_uaa.png)
 
+- To conclude Lab-6, let's take a look at the `kubernetes-dashboard` service that every K8s cluster has running in its `kube-system` namespace. The following steps were taken to retrieve address, ports and token we will need to access the `kubernetes-dashboard` for the `pks_managers_cluster` K8s cluster.
+
+![](./images/k8s_dashboard.png)
+
+
+
+
 
 **Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
 

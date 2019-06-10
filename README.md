@@ -268,6 +268,7 @@ You should see results similar to this:
 
 ![](./images/docker.png)
 
+As you can see, deploying Docker Images to PCF/PAS is simple and easy. You continue to benefit from all the same PAS features described in the previous lab: e.g. application monitoring, health-management, scaling, logging, routing, event tracking, etc.
 
 Let's `cf push` a Spring Boot application:
 
@@ -278,12 +279,15 @@ cd spring-music
 ./gradlew clean assemble
 cf push
 ```
+![](./images/buildpack.png)
 
 PCF PAS uses its Java Buildpack to create a container with all the dependencies necessary to run your Spring-Music App.
 
 ![](./images/SpringMusic.png)
 
 Go back to [Apps Manager](http://login.sys.ourpcf.com) and take a look at how it has recognized and reconfigured itself for the Docker and Spring Boot Apps. 
+
+![](./images/AppMan_Recog_Docker_Spring_Apps.png)
 
 Congratulations, you have completed Lab-5.
 

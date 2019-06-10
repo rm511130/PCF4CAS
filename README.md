@@ -308,9 +308,32 @@ Go back to [Apps Manager](http://login.sys.ourpcf.com) and take a look at how it
 
 ![](./images/AppMan_Recog_Docker_Spring_Apps.png)
 
-wip
+Let's now bind the MySQL DB to the Spring-Music App to experience how to consume services in PCF/PAS:
 
-**Let's Recap:** Lab-5 didn't take very long and yet you accomplished some significant outcomes - as a developer, you were able to push a Docker Image of a service written in Go and you used Gradle and the CF CLI to push a Spring Boot App.
+```
+cf services                             # just to check that you have a "create succeeded" next to your MySQL DB
+cf bind-service spring-music user1-db   # make sure to bind to the unique DB name you selected at the beginning of this Lab
+cf restage spring-music                 # allows spring-music to see and use the MySQL
+cf env spring-music                     # shows the MySQL connection string and username created on-demand for you
+```
+
+If you now refresh your Spring-Music Browser you should see the following change:
+
+![](./images/bind-service.png)
+
+If you are curious about the coding aspects of how Spring-Music consumed the MySQL service, you can take a look at the files under this directory: `/home/ubuntu/spring-music/src/main/java/org/cloudfoundry/samples/music/config/`
+
+**Let's Recap:** Lab-5 didn't take very long and yet you accomplished some significant outcomes - as a developer, you were able to push a Docker Image of a service written in Go and you used Gradle and the CF CLI to push a Spring Boot App. You created a dedicated MySQL DB instance and bound you Spring-Music application to it. After restaging Spring-Music, you verified that it was now using the MySQL DB.
+
+Let's tidy up so we're not consuming lots of AWS resources:
+
+```
+cf unbind-service spring-music user1-db
+cf delete-service user1-db
+cf delete chess
+cf delete factorial
+cf delete spring-music
+```
 
 Congratulations, you have completed Lab-5.
 

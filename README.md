@@ -97,7 +97,7 @@ https://pivotal.io/customers
 
 Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI). You will need to use the following private key: [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem).
 
-Note that the examples shown below apply to user1. If, for example, you are user11, your Ubuntu VM will be at `user11.ourpcf.com`.
+Note that the examples shown below apply to `user1`. If, for example, you are `user11`, your Ubuntu VM will be at `user11.ourpcf.com`.
 
 ![](./images/lab.png)
 

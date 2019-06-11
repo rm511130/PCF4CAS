@@ -218,6 +218,8 @@ Access _your_ route / URL or ask someone to access it. You should see someything
 
 **Let's recap:** You have deployed the Chess App code into a public cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, app health-management, HA considerations, cloud infrastructure provider, CVE (Common Vulnerabilities and Exposures), firewalls, etc., and you didn't have to open a service ticket. 
 
+![](./images/delight.png)
+
 Let's proceed. You can easily scale your App Instances:
 - horizontally, by increasing the number of containers running your Chess App (see example below)
 - or vertically, by adding more memory or disk-space to your containers

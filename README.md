@@ -128,7 +128,9 @@ If all the commands shown above displayed their respective CLI versions, you hav
 
 Please update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) with an "x" in the appropriate column.
 
-Note: if you had to install the pks, kubectl and cf CLIs, you would need to download the binary files from [PivNet](http://network.pivotal.io) and place them under `/usr/local/bin` using `chmod +x` to make them executable.
+Note: if you had to install the pks, kubectl and cf CLIs on a brand-new machine, you would need to download the binary files from [PivNet](http://network.pivotal.io) and place them under `/usr/local/bin` using `chmod +x` to make them executable.
+
+Congratulations, you have completed LAB-1.
 
 -----------------------------------------------------
 

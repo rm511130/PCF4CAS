@@ -98,6 +98,8 @@ https://pivotal.io/customers
 
 Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI). You will need to use the following private key: [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem).
 
+![](./images/lab.png)
+
 ```
 ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
 ```
@@ -136,6 +138,8 @@ Pivotal Application Service is the PaaS (Platform as a Service) component of the
 ![](./images/pas_diagram.png)
 
 Assuming you completed LAB-1 successfully, you should be logged into an Ubuntu VM hosted on AWS. Using this VM, change the User_ID in the following command and execute it to connect to PCF/PAS (Pivotal Application Service) - make sure to use the correct User-ID, i.e. the one claimed in the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) 
+
+![](./images/lab.png)
 
 ```
 cf login -a api.sys.ourpcf.com --skip-ssl-validation -u user1 -p password      # change -u userX to match your User-ID

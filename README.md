@@ -267,7 +267,7 @@ Congratulations, you have completed LAB-3.
 
 ### LAB-4: Apps Manager & Ops Manager
 
-Ops Manager is the operator's GUI. Workshop participants will find it at `http://opsman.ourpcf.com` but there's no need to perform any developer-related steps in Ops Manager. The images below show the key features of Ops Manager and we will describe them to you once the workshop gets to Lab-4.
+Ops Manager is the operator's GUI. Workshop participants will find it at [`http://opsman.ourpcf.com`](http://opsman.ourpcf.com) but there's no need to perform any developer-related steps in Ops Manager. The images below show the key features of Ops Manager and we will describe them to you once the workshop gets to Lab-4.
 
 ![](./images/OpsMan.png)
 

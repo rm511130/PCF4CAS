@@ -518,7 +518,7 @@ Looking at the steps shown above, working from the bottom-up, we see that:
 - `namespace1` was created by `pks_manager` in the `pks_managers_cluster`
 - And as you may recall, the K8s cluster named `pks_managers_cluster` was created by `pks_manager` using the `small` PKS plan: i.e. 1 Master and 3 Worker Nodes
 
-Not shown here: We created namespaces1, namespace2, ... namespace25 respectively for each user1, user2 ... user25
+Not shown here: As part of the set-up process for this workshop, we created namespace1, namespace2, ... namespace25 respectively for each user1, user2 ... user25
 
 The next few steps are for everyone in the workshop to execute using their Ubuntu VMs on AWS, their user-IDs and the namespace# that corresponds to your user-ID. For example: `user23` should use `namespace23`.
 

@@ -371,7 +371,7 @@ If you are curious about the coding aspects of how Spring-Music consumed the MyS
 
 ![](./images/lab.png)
 
-Let's tidy up so we're not consuming lots of AWS resources:
+Let's tidy up so we're not consuming lots of AWS resources. Please note that you need to update `user1-db` with the appropriate DB name you used during this lab:
 
 ```
 cf unbind-service spring-music user1-db

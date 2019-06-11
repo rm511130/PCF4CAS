@@ -606,7 +606,9 @@ Follow the `curl` command example shown below, but make sure to use the correct 
 
 ![](./images/kubectl_factorial.png)
 
-![](./images/lab.png)
+```
+curl http://10.0.9.5:32165/10; echo 
+```
 
 Let's perform some clean-up:
 

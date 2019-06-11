@@ -628,7 +628,7 @@ Congratulations, you have completed Lab-7.
 
 ### LAB-8: Deploying Apps using k8s Services & Creating Nginx Ingress Controller
 
-Let's deploy an app that is accessible in two different ways: as a Service type 'Loadbalancer' and as a Service type 'Ingress' with an nginx ingress controller that will route the request for the app.
+Let's deploy an app that is accessible in two different ways: as a Service type `Loadbalancer` and as a Service type `Ingress` with an Nginx ingress controller that will route the request for the app.
 
 ![](./images/lab.png)
 

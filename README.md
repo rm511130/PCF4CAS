@@ -175,9 +175,11 @@ Congratulations, you have completed LAB-2.
 -----------------------------------------------------
 
 ### LAB-3: "Here is my source code, Run it on the cloud for me, I do not care how."
-### .      - The Developer's Haiku
+###        - The Developer's Haiku
 
 Let's continue from Lab-2 by cloning some code from github. You should continue to use your Ubuntu VM.
+
+![](./images/lab.png)
 
 ```
 cf target -s development
@@ -196,7 +198,7 @@ cf push
 
 The previous command builds and runs a container for you. Once the process has been completed, you should look for the random route URL that PAS created for you. The output will look something like this:
 
-```html
+```
 name:              chess
 requested state:   started
 routes:            chess-intelligent-oryx.apps.ourpcf.com
@@ -217,6 +219,8 @@ Let's proceed. You can easily scale your App Instances:
 
 and you can log into any specific container. Let's try this:
 
+![](./images/lab.png)
+
 ```
 cf scale chess -i 3
 cf ssh chess -i 2
@@ -229,6 +233,8 @@ Issue a `kill` command on the `diego-sshd` PID per the example below.
 ![](./images/kill.png)
 
 Now try the following commands:
+
+![](./images/lab.png)
 
 ```
 cf events chess
@@ -264,6 +270,8 @@ PivNet is the name commonly used when we refer to `https://network.pivotal.io`. 
 
 And for the hands-on part of Lab-4, please access Apps Manager using a browser. Apps Manager is the developers' GUI. It can be found at `http://login.sys.ourpcf.com`. You will need to log-in using your User# and `password` for password. We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
 
+![](./images/lab.png)
+
 ![](./images/AppsMan.png)
 
 **Let's recap:** In Lab-4 you saw two PCF/PAS GUIs; Apps Manager for Developers, and Ops Manager for Operators. Apps Manager is a containerized App running on PCF/PAS; it's rich in functionality and easy to navigate. Ops Manager allows operators to install, update and upgrade PAS services at any point in time during normal work-hours, without asking Developers to stop their activities. You also saw PivNet - the source of all software releases, patches and updates.
@@ -276,6 +284,8 @@ Congratulations, if you accessed Apps Manager successfully, you have completed L
 
 Let's start by requesting a MySQL DB instance. Assuming that your are still logged into your Ubuntu Workshop VM proceed as follows:
 
+![](./images/lab.png)
+
 ```
 cf marketplace
 cf create-service p.mysql db-small user1-db     # make sure to use a unique name e.g. user2-db, user3-db, etc
@@ -283,7 +293,7 @@ cf services
 cf service user1-db
 ```
 
-Bosh is busy working on instantiating your MySQL database, so let's proceed by pushing a Docker image of a simple App written in Go while we wait for the MySQL DB (it should only take a few minutes).
+While Bosh is busy working on instantiating your MySQL database, let's proceed by pushing a Docker image of a simple App written in Go while we wait for the MySQL DB (it should only take a few minutes).
 
 ```
 cf push factorial --docker-image rmeira/factorial --random-route 
@@ -299,7 +309,9 @@ You should see results similar to this:
 
 ![](./images/docker.png)
 
-** Quick Recap:** Deploying Docker images to PCF/PAS is simple and easy. You continue to benefit from all the same PAS features described in the previous lab: e.g. application monitoring, health-management, scaling, logging, routing, event tracking, etc.
+**Quick Recap:** Deploying Docker images to PCF/PAS is simple and easy. You continue to benefit from all the same PAS features described in the previous lab: e.g. application monitoring, health-management, scaling, logging, routing, event tracking, etc.
+
+![](./images/lab.png)
 
 Let's `cf push` a Spring Boot application:
 
@@ -315,9 +327,13 @@ PCF PAS uses its Java Buildpack to create a container with all the dependencies 
 
 ![](./images/SpringMusic.png)
 
+![](./images/lab.png)
+
 Go back to [Apps Manager](http://login.sys.ourpcf.com) and take a look at how it has recognized and reconfigured itself for the Docker and Spring Boot Apps. 
 
 ![](./images/AppMan_Recog_Docker_Spring_Apps.png)
+
+![](./images/lab.png)
 
 Let's now bind the MySQL DB to the Spring-Music App to experience how to consume services in PCF/PAS:
 
@@ -335,6 +351,8 @@ If you now refresh your Spring-Music Browser you should see the following change
 If you are curious about the coding aspects of how Spring-Music consumed the MySQL service, you can take a look at the files under this directory: `/home/ubuntu/spring-music/src/main/java/org/cloudfoundry/samples/music/config/`
 
 **Let's Recap:** Lab-5 didn't take very long and yet you accomplished some significant outcomes - as a developer, you were able to push a Docker Image and a Spring Boot App. You created a dedicated MySQL DB instance and bound your Spring-Music application to it. 
+
+![](./images/lab.png)
 
 Let's tidy up so we're not consuming lots of AWS resources:
 
@@ -354,7 +372,7 @@ Congratulations, you have completed Lab-5.
 
 ### LAB-6: Installing the PKS Tile in Ops Manager
 
-Lab-6 involves some reading. No actual hands-on keyboard will be necessary until we proceed to Lab-7. This is because the steps we describe below are for Operations to execute during the installation of PKS and during the creation of K8s Clusters.
+Lab-6 involves some reading. Actual hands-on keyboard will only be necessary at the end of Lab-6. This is because the steps we describe below are for Operations to execute during the installation of PKS and during the creation of K8s Clusters.
 
 - K8s (Kubernetes) is an open-source platform for building platforms. It is a system for automating the deployment, scaling, and management of containerized applications. 
 - Pivotal Container Service (PKS) enables operators to provision, operate, and manage enterprise-grade Kubernetes clusters using BOSH and Pivotal Ops Manager.
@@ -452,6 +470,8 @@ Use "pks [command] --help" for more information about a command.
 
 - To make it simpler, we created an easier FQDN for the AWS ELB: `https://dash.ourpcf.com:31577` for you to try out. When challenged you will need to provide the access token resulting from the execution of:
 
+![](./images/lab.png)
+
 ```
 pks login -a https://api.pks.ourpcf.com:9021 -u pks_admin -p password -k
 pks get-credentials pks_managers_cluster
@@ -461,12 +481,13 @@ kubectl describe secret $(kubectl get secret | grep pks_admin | awk '{print $1}'
 
 ![](./images/access_to_dash.png)
 
-
 - You should be able to see and click-around the K8s Dashboard specific to the `pks_managers_cluster` K8s cluster:
+
+![](./images/lab.png)
 
 ![](./images/k8s_long_dashboard.png)
 
-**Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
+**Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters. Finally, you were able to access a K8s Dashboard.
 
 In the next lab we will hand-over a K8s cluster to developers.
 
@@ -474,7 +495,7 @@ In the next lab we will hand-over a K8s cluster to developers.
 
 ### LAB-7: Namespaces and Role Binding for Developer Access
 
-In this lab we will cover the creation of namespaces, user roles and how to perform role binding. As a developer, uou will get to perform some hands-on work, but first we have a few steps for the Operators and Administrators of the PKS platform.
+In this lab we will cover the creation of namespaces, user roles and how to perform role binding. As a developer, you will get to perform some hands-on work, but first we have a few steps for the Operators and Administrators of the PKS platform.
 
 ![](./images/create_namespace_role_rolebinding.png)
 
@@ -488,6 +509,8 @@ Looking at the steps shown above, working from the bottom-up, we see that:
 Not shown here: We created namespaces1, namespace2, ... namespace25 respectively for each user1, user2 ... user25
 
 The next few steps are for everyone in the workshop to execute using their Ubuntu VMs on AWS, their user-IDs and the namespace# that corresponds to your user-ID. For example: `user23` should use `namespace23`.
+
+![](./images/lab.png)
 
 1. Using your Ubuntu VM (and remembering to use the correct UserID) log into PKS to get the Kube Configuration for the `pks_managers_cluster`:
 
@@ -565,8 +588,9 @@ Follow the `curl` command example shown below, but make sure to use the correct 
 
 ![](./images/kubectl_factorial.png)
 
+![](./images/lab.png)
 
-Clean up
+Let's perform some clean-up:
 
 ```
 kubectl delete deployment factorial -n namespace1
@@ -590,18 +614,4 @@ Now that we can deploy a sample app, let's deploy an app that is accessible in t
 
 
 - [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

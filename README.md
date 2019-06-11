@@ -610,6 +610,8 @@ kubectl delete service factorial -n namespace1
 kubectl get pods -n namespace1
 ```
 
+Additional reading: This [page](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration) contains additional information on how to use the `kubectl` CLI.
+
 **Let's recap:** Using your UserID, you were able to deploy 2 pods running NGINX to the a namespace unique to your UserID. You were targeting a small Kubernetes cluster named `pks_managers_cluster`. You were also able to deploy, access and delete a Ubuntu 18.04 Docker image, and a Factorial Docker image. We skipped the need to use Load Balancers because our Workshop Ubuntu VMs were created in the 10.0.0.0/8 subnet to bypass the firewall concerns.
 
 Congratulations, you have completed Lab-7.

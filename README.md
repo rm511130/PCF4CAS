@@ -489,7 +489,7 @@ Use "pks [command] --help" for more information about a command.
 
 ![](./images/aws_setup_4_k8s_dashboard.png)
 
-- To make it simpler, we created an easier FQDN for the AWS ELB: [`https://dash.ourpcf.com:31577`](https://dash.ourpcf.com:31577) for you to try out. When challenged you will need to provide the `pks_admin` id-token resulting from the execution of:
+- To make it simpler, we created an easier FQDN for the AWS ELB: [`https://dash.ourpcf.com:31577`](https://dash.ourpcf.com:31039) for you to try out. When challenged you will need to provide the `pks_admin` id-token resulting from the execution of:
 
 ![](./images/lab.png)
 

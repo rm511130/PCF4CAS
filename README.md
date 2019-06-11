@@ -437,11 +437,25 @@ Use "pks [command] --help" for more information about a command.
 
 ![](./images/k8s_dashboard.png)
 
-- So we now know that the `pks_managers_cluster` K8s cluster is running on worker nodes with IP Addresses `10.0.10.5, 10.0.8.7 and 10.0.9.5`. We can use the IP addresses to determine their IDs in the AWS Console or we can use Bosh commands to retrieve the same information.
+- So we now know that the `pks_managers_cluster` K8s cluster is running on worker nodes with IP Addresses `10.0.10.5, 10.0.8.7 and 10.0.9.5`. We can use these IP addresses to determine their IDs in the AWS Console or we can use Bosh commands to retrieve the same information.
 - Note also that the TCP port number `31577` is how we can access the `kubernetes-dashboard`, so we need an AWS ELB that will point us to the worker nodes on their port `31577`. 
-- We will also need to make sure that AWS Security Groups allow the ELB to communicate over port `31577` to the worker nodes.
+- We will also need to make sure that AWS Security Groups allow the ELB to communicate over port `31577` with the worker nodes.
 
 ![](./images/aws_setup_4_k8s_dashboard.png)
+
+- To make it simpler, we created an easier FQDN for the AWS ELB: `https://dash.ourpcf.com:31577` for you to try out. When challenged you will need to provide the access token resulting from the execution of:
+
+```
+pks login -a https://api.pks.ourpcf.com:9021 -u pks_admin -p password -k
+pks get-credentials pks_managers_cluster
+kubectl describe secret $(kubectl get secret | grep pks_admin | awk '{print $1}') | grep "token:"
+```
+
+![](./images/access_to_dash.png)
+
+
+
+
 
 
 **Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.

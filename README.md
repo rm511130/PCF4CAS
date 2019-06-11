@@ -1,6 +1,6 @@
 ![](./images//Pivotal.png)
 
-# Transforming How The World Builds Software
+# Transforming How The World Builds Software 
 -----------------------------------------------------
 ## Workshop Contents
 (9:30AM to 3:30PM Breakfast & Lunch Included)

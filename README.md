@@ -49,6 +49,8 @@
 - Each workshop participant will be assigned an Ubuntu VM on AWS which has been readied for the execution of hands-on Labs. Your Laptop or Desktop will be used for two purposes: 
      - SSH'ing into the Ubuntu VM 
      - Browsing web pages
+     
+![](./images/lab.png)
 
 -----------------------------------------------------
 

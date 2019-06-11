@@ -622,8 +622,28 @@ Now that we can deploy a sample app, let's deploy an app that is accessible in t
 
 [Lab8 copy](https://github.com/rm511130/Parag-pks-workshop-/blob/master/session_03/lab_03.adoc)
 
+Congratulations, you have completed Lab-8.
+
+-----------------------------------------------------
+
+### LAB-9: A quick look at Harbor, Clair and Notary
+
+Congratulations, you have completed Lab-9.
+
+-----------------------------------------------------
+
+### LAB-10: A quick look at PKS with NSX-T
+
+Congratulations, you have completed Lab-10.
+
+_____________________________________________________
+
+### Wrapping-up
+
+We covered a lot of ground today. Lots of new concepts and hopefully lots of valueable learning opportunities.
+We've only scratched the surface. Pivotal has a robust set of services and documented best practices to help you get started with greenfield projects and/or brownfield migrations from old architectures to modern cloud native solutions.
+
+Thank you for your time and attention. We look forward to joint next steps.
 
 
-
-- [Awesome K8s](https://ramitsurana.github.io/awesome-kubernetes/)
 

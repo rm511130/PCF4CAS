@@ -220,7 +220,7 @@ Access _your_ route / URL or ask someone to access it. You should see someything
 
 ![](./images/chess.png)
 
-**Let's recap:** You have deployed the Chess App code into a public cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, app logging, app performance monitoring, app health-management, HA considerations, cloud infrastructure provider, CVE (Common Vulnerabilities and Exposures), firewalls, etc., and you didn't have to open a service ticket. 
+**Let's recap:** You have deployed the code for a Chess App into a public cloud without having to worry about IP addresses, ports, middleware, containers, VMs, network routers, application routes, DNS entries, certificates, logging, performance monitoring, app health-management, HA considerations, cloud infrastructure provider CLIs, CVE (Common Vulnerabilities and Exposures), firewalls, etc., and you didn't have to open a service ticket. 
 
 ![](./images/delight.png)
 

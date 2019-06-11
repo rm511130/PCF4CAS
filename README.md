@@ -330,7 +330,7 @@ cf push
 ```
 ![](./images/buildpack.png)
 
-PCF PAS uses its Java Buildpack to create a container with all the dependencies necessary to run your Spring-Music App.
+PCF PAS uses its [Java Buildpack](https://www.youtube.com/watch?v=xiWbm3H09dY) to create a container with all the dependencies necessary to run your Spring-Music App.
 
 ![](./images/SpringMusic.png)
 

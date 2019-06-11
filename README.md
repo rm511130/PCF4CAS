@@ -448,15 +448,16 @@ Use "pks [command] --help" for more information about a command.
 ```
 pks login -a https://api.pks.ourpcf.com:9021 -u pks_admin -p password -k
 pks get-credentials pks_managers_cluster
+kubectl config view -o jsonpath='{.contexts[?(@.name == "pks_admin")].context.user}'; echo
 kubectl describe secret $(kubectl get secret | grep pks_admin | awk '{print $1}') | grep "token:"
 ```
 
 ![](./images/access_to_dash.png)
 
 
+- You should be able to see and click-around the K8s Dashboard specific to the `pks_managers_cluster` K8s cluster:
 
-
-
+~[](./images/k8s_long_dashboard.png)
 
 **Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
 

@@ -2,7 +2,7 @@
 
 # Transforming How The World Builds Software
 -----------------------------------------------------
-## Workshop Agenda
+## Workshop Contents
 (9:30AM to 3:30PM Breakfast & Lunch Included)
 
 - Pivotal Mission & Applicability to C.A.S.

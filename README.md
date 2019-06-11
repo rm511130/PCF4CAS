@@ -489,7 +489,8 @@ Use "pks [command] --help" for more information about a command.
 
 ![](./images/aws_setup_4_k8s_dashboard.png)
 
-- To make it simpler, we created an easier FQDN for the AWS ELB: [`https://dash.ourpcf.com:31577`](https://dash.ourpcf.com:31039) for you to try out. When challenged you will need to provide the `pks_admin` id-token resulting from the execution of:
+- To make it simpler, we created an easier FQDN for the AWS ELB: [`https://dash.ourpcf.com:31039`](https://dash.ourpcf.com:31039) for you to try out. (Note: if you were paying attention, you probably noticed that we changed frorm port 31577 to port 31039. This happened during the prep-work for this workshop. The previous K8s cluster had to be replaced and then new one chose port 31039 for its dashboard). 
+- When challenged for a token (see below) you will need to provide the `pks_admin` id-token resulting from the execution of:
 
 ![](./images/lab.png)
 

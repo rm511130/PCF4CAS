@@ -306,10 +306,10 @@ While Bosh is busy working on instantiating your MySQL database, let's proceed b
 cf push factorial --docker-image rmeira/factorial --random-route 
 ```
 
-Once deployed, you can test `factorial` by using a browser or a `curl` command per the example below:
+Once deployed, you can test `factorial` by using a browser or a `curl` command per the example below. Your specific URL will be different from the example shown below.
 
 ```
-curl factorial-courteous-toucan.apps.ourpcf.com/6; echo
+curl factorial-happy-toucan.apps.ourpcf.com/6; echo
 ```
 
 You should see results similar to this: 

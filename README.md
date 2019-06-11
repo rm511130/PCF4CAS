@@ -685,14 +685,19 @@ You should see something like this:
 ![](./images/guestbook.png)
 
 
-Let's try working with an NGINX Ingress Controller now:
+Let's try working with an NGINX Ingress Controller now. 
+
+** ATTENTION **
+
+These next steps in this lab are configured to be executed by only one person using the `pks_manager` user. Whoever gets to this point in the Lab first gets to execute the following steps. **Please make sure you let everyone else know who you are.**
 
 ![](./images/lab.png)
 
-1. Continuing on your Ubuntu VM, and remembering to use your namespace#:
+1. Continuing on your Ubuntu VM:
 
 ```
-kubectl create -f ingress-rbac-allinone.yml -n namespace1
+pks get-kubeconfig pks_managers_cluster -u pks_admin -p password -a https://api.pks.ourpcf.com -k
+kubectl create -f ingress-rbac-allinone.yml
 ```
 
 You should see an output like the one shown below:
@@ -711,7 +716,7 @@ ingress.extensions/timesample-ingress created
 2. Let's check what services were created on what ports:
 
 ```
-kubectl get services -n namespace1
+kubectl get services -n nginx-ingress
 ```
 
 You should see an output similar to the one shown below:

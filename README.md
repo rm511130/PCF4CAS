@@ -40,8 +40,7 @@
 - The labs are interdependent and must be executed in order.
 - Use the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) to claim a user-id for this workshop. For example, Ralph Meira is user1.
 - Update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) as you progress through the Labs, by placing an "x" in the appropriate column.
-- When carrying out hands-on labs, you can simply cut-&-paste the commands shown `in boxes like this one`. 
-- However, when issuing commands, please make sure to alter the user-id to match the one you have claimed, e.g.:
+- When carrying out hands-on labs, you can cut-&-paste the commands shown `in boxes like this one`. However, when issuing commands, please make sure to alter the user-id to match the one you have claimed, e.g.:
   - `ssh -i fuse.pem ubuntu@user3.ourpcf.com` is for `user3` 
   - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
 - Don't get stuck. Ask for help. The goal is to learn concepts and understand how Pivotal can help CAS be successful.

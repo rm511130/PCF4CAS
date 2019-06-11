@@ -162,7 +162,7 @@ cf orgs; cf spaces
 cf target -s development
 ```
 
-Grant a colleague of yours access to your `development` space. In the example below we'll use `user2` but you can pick anyone participating in this workshop.
+Grant a colleague of yours access to your `development` space. In the example shown below `user1` is granting `user2` the right to access the `development` space in `org1`. `user2` is being granted the role of `SpaceDeveloper`. You can pick tthe userID of anyone participating in this workshop, but make sure you are referencing your ORG (and not `org1`) in the command below:
 
 ```
 cf set-space-role user2 org1 development SpaceDeveloper

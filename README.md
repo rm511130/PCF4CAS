@@ -271,11 +271,11 @@ Ops Manager is the operator's GUI. Workshop participants will find it at [`http:
 
 ![](./images/OpsMan.png)
 
-PivNet is the name commonly used when we refer to `https://network.pivotal.io`. PivNet is the source of all Software Bits from Pivotal and Third Party vendors. You can also download buildpacks, stemcells and Pivotal Data Products from PivNet.
+PivNet is the name commonly used when we refer to [`https://network.pivotal.io`](https://network.pivotal.io). PivNet is the source of all Software Bits from Pivotal and Third Party vendors. You can also download buildpacks, stemcells and Pivotal Data Products from PivNet.
 
 ![](./images/PivNet.png)
 
-And for the hands-on part of Lab-4, please access Apps Manager using a browser. Apps Manager is the developers' GUI. It can be found at `http://login.sys.ourpcf.com`. You will need to log-in using your User# and `password` for password. We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
+And for the hands-on part of Lab-4, please access Apps Manager using a browser. Apps Manager is the developers' GUI. It can be found at [`http://login.sys.ourpcf.com`](http://login.sys.ourpcf.com). You will need to log-in using your User# and `password` for password. We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
 
 ![](./images/lab.png)
 

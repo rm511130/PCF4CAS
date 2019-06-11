@@ -536,7 +536,7 @@ The next few steps are for everyone in the workshop to execute using their Ubunt
 1. Using your Ubuntu VM (and remembering to use the correct UserID) log into PKS to get the Kube Configuration for the `pks_managers_cluster`:
 
 ```
-pks get-kubeconfig pks_managers_cluster -p password -a https://api.pks.ourpcf.com -k -user1
+pks get-kubeconfig pks_managers_cluster -p password -a https://api.pks.ourpcf.com -k -u user1
 ```
 
 2. Take a look at the file `cat ~/.kube/config` that was created by Step 1.

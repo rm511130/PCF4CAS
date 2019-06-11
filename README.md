@@ -579,7 +579,7 @@ kubectl get deployments -n namespace1
 kubectl get pods -n namespace1 -o wide
 ```
 
-6. Let's also create and access a simple Ubuntu container. Make sure to use the correct namespace.
+6. Let's also create and access a simple Ubuntu container. Make sure to use the correct namespace and make sure you `exit` from the Ubuntu 18.04 container before you attempt to delete the pod:
 
 ```
 kubectl run -i --tty ubuntu --image=ubuntu:18.04 --restart=Never -n namespace1 -- /bin/bash -il

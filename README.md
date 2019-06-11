@@ -457,7 +457,7 @@ kubectl describe secret $(kubectl get secret | grep pks_admin | awk '{print $1}'
 
 - You should be able to see and click-around the K8s Dashboard specific to the `pks_managers_cluster` K8s cluster:
 
-~[](./images/k8s_long_dashboard.png)
+![](./images/k8s_long_dashboard.png)
 
 **Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters.
 

@@ -620,9 +620,122 @@ Congratulations, you have completed Lab-7.
 
 ### LAB-8: Deploying Apps using k8s Services & Creating Nginx Ingress Controller
 
-Now that we can deploy a sample app, let's deploy an app that is accessible in two different ways: as a Service type 'Loadbalancer' and as a Service type 'Ingress' with an nginx ingress controller that will route the request for the app.
+Let's deploy an app that is accessible in two different ways: as a Service type 'Loadbalancer' and as a Service type 'Ingress' with an nginx ingress controller that will route the request for the app.
 
-[Lab8 copy](https://github.com/rm511130/Parag-pks-workshop-/blob/master/session_03/lab_03.adoc)
+![](./images/lab.png)
+
+1. Let's make sure you are logged in properly as a developer. We wish to deploy to the `pks_managers_cluster` using your UserID, so please make sure to alter the command shown below so it matches your UserID:
+
+```
+pks get-kubeconfig pks_managers_cluster -u user1 -p password -a https://api.pks.ourpcf.com -k
+```
+
+2. In the home directory of your Workshop Ubuntu VM you should find a `guestbook-all-in-one.yaml` file. Let's put it to work making sure that you are pointing at the correct namespace:
+
+```
+kubectl create -f guestbook-all-in-one.yaml -n namespace1
+```
+
+You should see an output similar to the one shown below:
+
+```
+service/redis-master created
+deployment.apps/redis-master created
+service/redis-slave created
+deployment.apps/redis-slave created
+service/frontend created
+deployment.apps/frontend created
+```
+
+3. Let's check what services were created:
+
+```
+kubectl get services -n namespace1
+```
+
+You should see an output similar to the one shown below:
+
+```
+NAME           TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+frontend       LoadBalancer   10.100.200.95    <pending>     80:30075/TCP   92s
+redis-master   ClusterIP      10.100.200.247   <none>        6379/TCP       92s
+redis-slave    ClusterIP      10.100.200.214   <none>        6379/TCP       92s```
+```
+
+The `pending` service would normally require us to create an AWS ELB (Elastic Load Balancer), but since our Ubuntu VM belongs to the 10.0.0.0/8 CIDR, and given that we know the Worker Node IP Addresses (i.e. `10.0.10.5`,`10.0.8.7`,`10.0.9.5`) of the cluster `pks_managers_cluster`, we can use `links` to validate that our GuestBook App is running.
+Using `port 30075` (i.e. the port number you obtained from your `LoadBalancer` line in the output shown above), try to connect:
+
+```
+links http://10.0.10.5:30075
+```
+
+You should see something like this:
+
+![](./images/guestbook.png)
+
+
+Let's try working with an NGINX Ingress Controller now:
+
+![](./images/lab.png)
+
+1. Continuing on your Ubuntu VM, and remembering to use your namespace#:
+
+```
+kubectl create -f ingress-rbac-allinone.yml -n namespace1
+```
+
+You should see an output like the one shown below:
+
+```
+serviceaccount/nginx-ingress-serviceaccount created
+deployment.extensions/default-http-backend created
+service/default-http-backend created
+deployment.extensions/nginx-ingress-controller created
+service/nginx-ingress-controller created
+service/timesample created
+deployment.extensions/timesample created
+ingress.extensions/timesample-ingress created
+```
+
+2. Let's check what services were created on what ports:
+
+```
+kubectl get services -n namespace1
+```
+
+You should see an output similar to the one shown below:
+
+```
+NAME                       TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+default-http-backend       ClusterIP      10.100.200.61    <none>        80/TCP         95s
+frontend                   LoadBalancer   10.100.200.95    <pending>     80:30075/TCP   17m
+nginx-ingress-controller   LoadBalancer   10.100.200.174   <pending>     80:32311/TCP   95s
+redis-master               ClusterIP      10.100.200.247   <none>        6379/TCP       17m
+redis-slave                ClusterIP      10.100.200.214   <none>        6379/TCP       17m
+timesample                 ClusterIP      10.100.200.239   <none>        80/TCP         95s
+```
+
+3. Let's test the new `nginx-ingress-controller` and the service `timesample`:
+
+```
+curl http://10.0.10.5:32311/timesample; echo
+```
+
+You should get an output that looks something like this:
+
+```
+{"date":"Tue Jun 11 18:13:51 GMT 2019","milliseconds":1560276831957}
+```
+
+**Quick Recap:** We saw during this lab how to deploy two applications to a K8s cluster. Guestbook leveraged a Redis service and Timesample used an Nginx Ingress Controller. In both cases we would need to create an AWS ELB so that customers could access the Apps but, as developers, we were able to test our Apps by going directly to the correct Worker Nodes and Ports.
+
+Before we can consider this lab complete, let's clean-up using the following script found in the home directory of your Ubuntu VM:
+
+```
+./clean-up-kubectl.sh -n namespace1
+```
+
+It may take a few minutes to complete the deletion process.
 
 Congratulations, you have completed Lab-8.
 

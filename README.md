@@ -435,7 +435,9 @@ Step 4 is shown in the installation video mentioned above, but it merits a deepe
 ```
 $ pks
 
-The Pivotal Container Service (PKS) CLI is used to create, manage, and delete Kubernetes clusters. To deploy workloads to a Kubernetes cluster created using the PKS CLI, use the Kubernetes CLI, kubectl.
+The Pivotal Container Service (PKS) CLI is used to create, manage, and delete Kubernetes clusters. 
+
+To deploy workloads to a Kubernetes cluster created using the PKS CLI, use the Kubernetes CLI, kubectl.
 
 Version: 1.4.0-build.194
 

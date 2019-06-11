@@ -514,8 +514,8 @@ In this lab we will cover the creation of namespaces, user roles and how to perf
 Looking at the steps shown above, working from the bottom-up, we see that: 
 
 - `user1` was given the role `ns-admin` in `namespace01`
-- The role `ns-admin` was created with full admin controls (apiGroups, resources and verbs) over `namespace01`
-- `namespace01` was created by `pks_manager` in the `pks_managers_cluster`
+- The role `ns-admin` was created with full admin controls (apiGroups, resources and verbs) over `namespace1`
+- `namespace1` was created by `pks_manager` in the `pks_managers_cluster`
 - And as you may recall, the K8s cluster named `pks_managers_cluster` was created by `pks_manager` using the `small` PKS plan: i.e. 1 Master and 3 Worker Nodes
 
 Not shown here: We created namespaces1, namespace2, ... namespace25 respectively for each user1, user2 ... user25

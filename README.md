@@ -332,6 +332,12 @@ cf push
 
 PCF PAS uses its [Java Buildpack](https://www.youtube.com/watch?v=xiWbm3H09dY) to create a container with all the dependencies necessary to run your Spring-Music App.
 
+Look for the route that the `cf push` created for you and access the `Spring-Music` App using a browser. Please note that the `cat manifest.yml` file contains the line `random-route: true` to make sure other workshop labs don't clash with yours.
+
+```
+cf app spring-music | grep route
+```
+
 ![](./images/SpringMusic.png)
 
 ![](./images/lab.png)

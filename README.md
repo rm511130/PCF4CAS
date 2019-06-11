@@ -630,6 +630,8 @@ Congratulations, you have completed Lab-8.
 
 ### LAB-9: A quick look at Harbor, Clair and Notary
 
+![](./images/harbor.png)
+
 Congratulations, you have completed Lab-9.
 
 -----------------------------------------------------

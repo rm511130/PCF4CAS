@@ -688,9 +688,11 @@ You should see something like this:
 
 Let's try working with an NGINX Ingress Controller now. 
 
-** ATTENTION **
+****ATTENTION****
 
-These next steps in this lab are configured to be executed by only one person using the `pks_manager` user. Whoever gets to this point in the Lab first gets to execute the following steps. **Please make sure you let everyone else know who you are.**
+- The next steps in this lab are configured to be executed by **only one person** using the `pks_manager` user. 
+- Whoever gets to this point in the Lab first gets to execute the following steps. 
+- **Please make sure you let everyone else know who you are.**
 
 ![](./images/lab.png)
 

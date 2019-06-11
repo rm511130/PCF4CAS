@@ -641,6 +641,7 @@ pks get-kubeconfig pks_managers_cluster -u user1 -p password -a https://api.pks.
 2. In the home directory of your Workshop Ubuntu VM you should find a `guestbook-all-in-one.yaml` file. Let's put it to work making sure that you are pointing at the correct namespace:
 
 ```
+cd ~
 kubectl create -f guestbook-all-in-one.yaml -n namespace1
 ```
 

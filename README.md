@@ -187,8 +187,8 @@ Let's continue from Lab-2 by cloning some code from github. You should continue 
 ![](./images/lab.png)
 
 ```
-cf target -s development
-cd ~    # just to make sure you are in your home directory
+cf target   # just to check your current ORG and SPACE
+cd ~        # just to make sure you are in your home directory
 git clone https://github.com/rm511130/chess; cd chess; ls -las
 ```
 

@@ -45,7 +45,7 @@
   - `ssh -i fuse.pem ubuntu@user15.ourpcf.com` is for `user15`
 - Don't get stuck. Ask for help. The goal is to learn concepts and understand how Pivotal can help CAS be successful.
 - The PAS and PKS platforms we will be using were created using self-signed certificates, so you will sometimes have to click through warning screens about insecure pages.
-- Each workshop participant will be assigned an Ubuntu VM on AWS which has been readied for the execution of hands-on Labs. Your Laptop or Desktop will be used for two purposes: 
+- Each workshop participant will be assigned an Ubuntu VM which has been readied for the execution of hands-on Labs. Your Laptop or Desktop will only be used for two purposes: 
      - SSH'ing into the Ubuntu VM 
      - Browsing web pages
 - When it's time for hands-on labs, you will see the following icon:

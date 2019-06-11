@@ -5,7 +5,7 @@
 ## Workshop Agenda
 (9:30AM to 3:30PM Breakfast & Lunch Included)
 
-- Pivotal Mission & Applicability to our Customers
+- Pivotal Mission & Applicability to C.A.S.
      - Value Statement
      - Case Studies
 -  PCF Installation Steps

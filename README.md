@@ -481,15 +481,14 @@ Use "pks [command] --help" for more information about a command.
 
 ![](./images/aws_setup_4_k8s_dashboard.png)
 
-- To make it simpler, we created an easier FQDN for the AWS ELB: `https://dash.ourpcf.com:31577` for you to try out. When challenged you will need to provide the access token resulting from the execution of:
+- To make it simpler, we created an easier FQDN for the AWS ELB: `https://dash.ourpcf.com:31577` for you to try out. When challenged you will need to provide the `pks_admin` id-token resulting from the execution of:
 
 ![](./images/lab.png)
 
 ```
 pks login -a https://api.pks.ourpcf.com:9021 -u pks_admin -p password -k
 pks get-credentials pks_managers_cluster
-kubectl config view -o jsonpath='{.contexts[?(@.name == "pks_admin")].context.user}'; echo
-kubectl describe secret $(kubectl get secret | grep pks_admin | awk '{print $1}') | grep "token:"
+cat ~/.kube/config | grep "name:\|id-token:"
 ```
 
 ![](./images/access_to_dash.png)

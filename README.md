@@ -105,7 +105,7 @@ Note that the examples shown below apply to `user1`. If, for example, you are `u
 ssh -i ./fuse.pem ubuntu@user1.ourpcf.com
 ```
 
-Once logged in, execute the following commands:
+Once logged in, you can ignore any messages that ask you to perform a `do-release-upgrade`. Please proceed by executing the following commands:
 
 ```
 pks --version

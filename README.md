@@ -700,7 +700,8 @@ Let's try working with an NGINX Ingress Controller now.
 
 ```
 pks get-kubeconfig pks_managers_cluster -u pks_admin -p password -a https://api.pks.ourpcf.com -k
-kubectl create -f ingress-rbac-allinone.yml
+kubectl create namespace ingress-nginx
+kubectl create -f ingress-rbac-allinone.yml -n ingress-nginx
 ```
 
 You should see an output like the one shown below:
@@ -719,7 +720,7 @@ ingress.extensions/timesample-ingress created
 2. Let's check what services were created on what ports:
 
 ```
-kubectl get services -n nginx-ingress
+kubectl get services -n ingress-nginx
 ```
 
 You should see an output similar to the one shown below:

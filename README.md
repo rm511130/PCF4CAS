@@ -54,7 +54,7 @@
 
 -----------------------------------------------------
 
-## Pivotal's Value Statements
+## Pivotal's Beliefs and Value Statements
 - Enterprises rely on software to improve business outcomes.
 - They depend on velocity of converting ideas to new features, new applications, new capabilities, and new services.
 - The pace of change is generating a daunting backlog of work for IT leaders, who are also under pressure to reduce technology spend and limit security vulnerabilities.

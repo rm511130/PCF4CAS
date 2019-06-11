@@ -148,7 +148,7 @@ Assuming you completed LAB-1 successfully, you should be logged into an Ubuntu V
 cf login -a api.sys.ourpcf.com --skip-ssl-validation -u user1 -p password      # change -u userX to match your User-ID
 ```
 
-You will land in an ORG and SPACE that were created just for you to use and manage during this workshop. ORGs are often used to isolate Business/App-Programs/Products, and SPACEs are used to isolate Apps in DEV, TEST, and PROD phases. If an ORG manager has added you to his/her ORG, you will be presented with options when loging-in: choose the ORG# that matches your UserID. For example, `user23` should choose `org23`.
+You will land in an ORG and SPACE that were created just for you to use and manage during this workshop. ORGs are often used to isolate Business Products (Application Initiatives), and SPACEs are used to isolate Apps in DEV, TEST, and PROD phases. If an ORG manager has added you to his/her ORG, you will be presented with options when loging-in: choose the ORG# that matches your UserID. For example, `user23` should choose `org23`.
 
 Let's continue:
 

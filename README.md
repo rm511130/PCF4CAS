@@ -690,7 +690,7 @@ Let's try working with an NGINX Ingress Controller now.
 
 ****ATTENTION****
 
-- The next steps in this lab are configured to be executed by **only one person** using the `pks_manager` user. 
+- The next steps in this lab are configured to be executed by **only one person** using the `pks_admin` user. 
 - Whoever gets to this point in the Lab first gets to execute the following steps. 
 - **Please make sure you let everyone else know who you are.**
 

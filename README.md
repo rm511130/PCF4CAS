@@ -638,7 +638,7 @@ Let's deploy an app that is accessible in two different ways: as a Service type 
 1. Let's make sure you are logged in properly as a developer. We wish to deploy to the `pks_managers_cluster` using your UserID, so please make sure to alter the command shown below so it matches your UserID:
 
 ```
-pks get-kubeconfig pks_managers_cluster -u user1 -p password -a https://api.pks.ourpcf.com -k
+pks get-kubeconfig pks_managers_cluster -p password -a https://api.pks.ourpcf.com -k -u user1 
 ```
 
 2. In the home directory of your Workshop Ubuntu VM you should find a `guestbook-all-in-one.yaml` file. Let's put it to work making sure that you are pointing at the correct namespace:

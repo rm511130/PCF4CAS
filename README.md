@@ -124,6 +124,10 @@ cf --version
 git version
 ```
 
+```
+docker --version
+```
+
 If all the commands shown above displayed their respective CLI versions, you have successfully completed Lab-1.
 
 Please update the [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8) with an "x" in the appropriate column.

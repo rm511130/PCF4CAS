@@ -774,7 +774,7 @@ Congratulations, you have completed Lab-8.
 
 ![](./images/harbor-pg1.png)
 
-- Here typical commands used to push a local Docker image into Harbor:
+- We see below the typical commands used to push a local Docker image into Harbor:
 
 ```
 Mac $ docker login -u rmeira -p Password1 harbor.haas-239.pez.pivotal.io
@@ -787,7 +787,7 @@ Mac $ docker pull rmeira/factorial
 
 Mac $ docker tag rmeira/factorial harbor.haas-239.pez.pivotal.io/library/factorial:latest
 
-Mac $ docker images
+Mac $ docker images
 REPOSITORY                                         TAG     IMAGE ID        CREATED         SIZE
 rmeira/factorial                                   latest  c4ba1152cd49    11 months ago   704MB
 harbor.haas-239.pez.pivotal.io/library/factorial   latest  c4ba1152cd49    11 months ago   704MB
@@ -799,15 +799,15 @@ f5961e782729: Layer
 latest: digest: sha256:b6465e86c0561e26f0ff0239d619dade73692d6ad07c9315adb1ecae0a353d15 size: 2624
 ```
 
-- Let's see the results in the Harbor GUI
+- Let's see the results of the commands shown above in the Harbor GUI:
 
 ![](./images/harbor-pg3.png)
 
-- Adding users to projects in Harbor
+- Adding users to projects in Harbor is also a simple task:
 
 ![](./images/harbor-pg4.png)
 
-- Harbor documentation:
+- And there's extensive Harbor documentation:
 
 ![](./images/harbor-pg5.png)
 

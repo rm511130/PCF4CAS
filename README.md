@@ -766,7 +766,7 @@ Congratulations, you have completed Lab-8.
 ### LAB-9: A quick look at Harbor, Clair and Notary
 
 - This Lab is a demo. No hands-on is required.
-- Harbor is a private image registry that combined with Clair image scanning and Notary image signing, provides a complete solution to managing images assets.
+- Harbor is a private image registry that combined with Clair image scanning and Notary image signing, provides a complete solution to managing container images.
 
 ![](./images/harbor.png)
 

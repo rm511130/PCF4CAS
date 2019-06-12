@@ -29,7 +29,7 @@
 ## Technical Pre-Requisites
 - A Mac or PC with internet connection, running a browser that can access https://chess.cfapps.io
 - Ability to access and update this [Workshop Google Sheet](https://drive.google.com/open?id=1YcaNLkBqXHgYZch6yV8Kvf2G2AUG-trKSQQvejpstv8)
-- Ability to SSH into a Ubuntu VM (public IP address) using a private-key file
+- Ability to SSH into an Ubuntu VM (public IP address) using a private-key file
 
   e.g. `ssh -i fuse.pem ubuntu@user1.ourpcf.com`
   - [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem) must be set using `chmod 400` to read-only by owner
@@ -72,7 +72,7 @@
 
 ## Case Studies
 
-World-class teams of agile developers, product managers, and designers can adopt the [Pivotal way](https://pivotal.io/labs) of building and deploying software with quality and sustainable velocity in a cost-effective manner. The techniques Pivotal uses and advocates, involve Minimum Viable Products (MVPs), Lean experiments, Identifying & testing assumptions, Data driven decisions, User-centered designs, Prototyping, Pair Programming, Test-Driven Development (TDD), Short Iterations, Continuous Integration and Deployment.
+World-class teams of agile developers, product managers, and designers can adopt the [Pivotal way](https://pivotal.io/labs) of building and deploying software with quality and sustainable velocity in a cost-effective manner. The techniques Pivotal uses and advocates involve Minimum Viable Products (MVPs), Lean experiments, Identifying & testing assumptions, Data driven decisions, User-centered designs, Prototyping, Pair Programming, Test-Driven Development (TDD), Short Iterations, Continuous Integration and Deployment.
 
 The results are amazing:
 - Build working software at a consistent speed and quality in the face of changing requirements.
@@ -97,7 +97,7 @@ https://pivotal.io/customers
 
 ### LAB-1: SSH into your Linux Workshop environment & test the Command Line Interface tools
 
-Let's start by logging into the Workshop environment from your machine (Mac, PC, LapTop, Desktop, Terminal, VDI). You will need to use the following private key: [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem).
+Let's start by logging into the Workshop environment from your machine (Mac, PC, Laptop, Desktop, Terminal, VDI). You will need to use the following private key: [fuse.pem](https://github.com/rm511130/PCF4CAS/blob/master/fuse.pem).
 
 Note that the examples shown below apply to `user1`. If, for example, you are `user11`, your Ubuntu VM will be at `user11.ourpcf.com`.
 
@@ -154,7 +154,7 @@ Assuming you completed LAB-1 successfully, you should be logged into an Ubuntu V
 cf login -a api.sys.ourpcf.com --skip-ssl-validation -u user1 -p password      # change -u userX to match your User-ID
 ```
 
-You will land in an ORG and SPACE that were created just for you to use and manage during this workshop. ORGs are often used to isolate Business Products (Application Initiatives), and SPACEs are used to isolate Apps in DEV, TEST, and PROD phases. If an ORG manager has added you to his/her ORG, you will be presented with options when loging-in: choose the ORG# that matches your UserID. For example, `user23` should choose `org23`.
+You will land in an ORG and SPACE that were created just for you to use and manage during this workshop. ORGs are often used to isolate Business Products (Application Initiatives), and SPACEs are used to isolate Apps in DEV, TEST, and PROD phases. If an ORG manager has added you to his/her ORG, you will be presented with options when logging-in. Choose the ORG# that matches your UserID. For example, `user23` should choose `org23`.
 
 Let's continue:
 
@@ -164,7 +164,7 @@ cf orgs; cf spaces
 cf target -s development
 ```
 
-Grant a colleague of yours access to your `development` space. In the example shown below `user1` is granting `user2` the right to access the `development` space in `org1`. `user2` is being granted the role of `SpaceDeveloper`. You can pick tthe userID of anyone participating in this workshop, but make sure you are referencing your ORG (and not `org1`) in the command below:
+Grant a colleague of yours access to your `development` space. In the example shown below `user1` is granting `user2` the right to access the `development` space in `org1`. `user2` is being granted the role of `SpaceDeveloper`. You can pick the userID of anyone participating in this workshop, but make sure you are referencing your ORG (and not `org1`) in the command below:
 
 ```
 cf set-space-role user2 org1 development SpaceDeveloper
@@ -179,7 +179,7 @@ cf buildpacks
 The list is actually much longer. Take a look at: https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks
 
 
-**Let's recap:** You have access to PAS (Pivotal Application Service), to an ORG and two spaces that can be used for your projects. You can develop code in the developement SPACE and promote it into the production SPACE. You have used RBAC (Role Based Access Controls) to give another developer access to your development SPACE. You validated that PAS supports many development languages.
+**Let's recap:** You have access to PAS (Pivotal Application Service), to an ORG and two spaces that can be used for your projects. You can develop code in the development SPACE and promote it into the production SPACE. You have used RBAC (Role Based Access Controls) to give another developer access to your development SPACE. You validated that PAS supports many development languages.
 
 Congratulations, you have completed LAB-2. 
 
@@ -218,7 +218,7 @@ stack:             cflinuxfs3
 buildpacks:        php 4.3.70
 ```
 
-Access _your_ route / URL or ask someone to access it. You should see someything similar to this:
+Access _your_ route / URL or ask someone to access it. You should see something similar to this:
 
 ![](./images/chess.png)
 
@@ -240,7 +240,7 @@ cf ssh chess -i 2
 ps -ef
 ```
 
-While still ssh'ed into one of the three Chess App containers, look for the lowest PID corresponding to the `diego-sshd` process. In the example shown below, the PID we are looking for is `15`. In your case it may be another number.
+While still ssh'ed into one of the three Chess App containers, look for the lowest PID corresponding to the `diego-sshd`  process. In the example shown below, the PID we are looking for is `15`. In your case it may be another number.
 Issue a `kill` command on the `diego-sshd` PID per the example below.
 
 ![](./images/kill.png)
@@ -277,17 +277,17 @@ Ops Manager is the operator's GUI. Workshop participants will find it at [`http:
 
 ![](./images/OpsMan.png)
 
-PivNet is the name commonly used when we refer to [`https://network.pivotal.io`](https://network.pivotal.io). PivNet is the source of all Software Bits from Pivotal and Third Party vendors. You can also download buildpacks, stemcells and Pivotal Data Products from PivNet.
+PivNet is the name commonly used when we refer to [`https://network.pivotal.io`](https://network.pivotal.io). PivNet is the source of all Software Bits from Pivotal and Third-Party vendors. You can also download buildpacks, stemcells and Pivotal Data Products from PivNet.
 
 ![](./images/PivNet.png)
 
-And for the hands-on part of Lab-4, please access Apps Manager using a browser. Apps Manager is the developers' GUI. It can be found at [`http://login.sys.ourpcf.com`](http://login.sys.ourpcf.com). You will need to log-in using your User# and `password` for password. We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management.
+And for the hands-on part of Lab-4, please access Apps Manager using a browser. Apps Manager is the developers' GUI. It can be found at [`http://login.sys.ourpcf.com`](http://login.sys.ourpcf.com). You will need to log-in using your User# and `password` for password. We will also demonstrate the features of Apps Manager, but you are welcome to click around and learn about its features: events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cycle management and health-management.
 
 ![](./images/lab.png)
 
 ![](./images/AppsMan.png)
 
-**Let's recap:** In Lab-4 you saw two PCF/PAS GUIs; Apps Manager for Developers, and Ops Manager for Operators. Apps Manager gives you easy access to events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cyle management and health-management. Incidently, Apps Manager is a containerized App running on PCF/PAS. Ops Manager allows operators to install, update, upgrade and monitor PAS services at any point in time during normal work-hours, without asking Developers to stop their activities. You also saw PivNet - the source of all software releases, patches and updates.
+**Let's recap:** In Lab-4 you saw two PCF/PAS GUIs; Apps Manager for Developers, and Ops Manager for Operators. Apps Manager gives you easy access to events, services, routes, tasks, logs, traces, threads, settings, (auto)scaling, metrics, life-cycle management and health-management. Incidentally, Apps Manager is a containerized App running on PCF/PAS. Ops Manager allows operators to install, update, upgrade and monitor PAS services at any point in time during normal work-hours, without asking Developers to stop their activities. You also saw PivNet - the source of all software releases, patches and updates.
 
 Congratulations, if you accessed Apps Manager successfully, you have completed Lab #4. Leave your Apps Manager browser window open because we will come back to it again. 
 
@@ -295,7 +295,7 @@ Congratulations, if you accessed Apps Manager successfully, you have completed L
 
 ### LAB-5: PAS provides Services, runs Docker Images and Spring Apps
 
-Let's start by requesting a MySQL DB instance. Assuming that your are still logged into your Ubuntu Workshop VM proceed as follows:
+Let's start by requesting a MySQL DB instance. Assuming that you are still logged into your Ubuntu Workshop VM proceed as follows:
 
 ![](./images/lab.png)
 
@@ -329,7 +329,7 @@ You should see results similar to this:
 Let's `cf push` a Spring Boot application:
 
 ```
-cd ~   # to make sure you are back to the your home directory
+cd ~   # to make sure you are back to your home directory
 git clone https://github.com/rm511130/spring-music
 cd spring-music; ./gradlew clean assemble
 cf push
@@ -363,7 +363,7 @@ cf restage spring-music                 # allows spring-music to see and use the
 cf env spring-music                     # shows the MySQL connection string and username created on-demand for you
 ```
 
-If you now refresh your Spring-Music Browser you should see the following change:
+If you now refresh your Spring-Music Browser, you should see the following change:
 
 ![](./images/bind-service.png)
 
@@ -383,7 +383,7 @@ cf delete factorial
 cf delete spring-music
 ```
 
-**Quick Recap:** You accomplished quite a bit just now. The unwiring of application performance monitoring, log monitoring, and health-check services for three different Apps. You also deleted a database, DNS entries, routing information, VM and containers. You also revoked user access to your Apps. These can be tedious and time consuming efforts, and yet, you just - as a developer - completed these tasks without opening any support tickets. 
+**Quick Recap:** You accomplished quite a bit just now. The unwiring of application performance monitoring, log monitoring, and health-check services for three different Apps. You also deleted a database, DNS entries, routing information, VM and containers. You also revoked user access to your Apps. These can be tedious and time-consuming efforts, and yet, you just - as a developer - completed these tasks without opening any support tickets. 
 
 Congratulations, you have completed Lab-5.
 
@@ -399,7 +399,7 @@ Lab-6 involves some reading. Actual hands-on keyboard will only be necessary at 
 
 ![](./images/k8s_and_pks.png)
 
-During this workshop we will show you many key aspects of the installation and set-up of the PKS Tile and the creation and management of K8s clusters. However, installimg PKS on any IaaS takes at least 1hr, so please watch this compressed [15min video](https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
+During this workshop we will show you many key aspects of the installation and set-up of the PKS Tile and the creation and management of K8s clusters. However, installing PKS on any IaaS takes at least 1hr, so please watch this compressed [15min video](https://www.youtube.com/watch?time_continue=83&v=Oxw-lucgpX0) to get an idea of the steps involved.
 
 ![](./images/bosh_pks_k8s_on_aws.png)
 
@@ -508,7 +508,7 @@ cat ~/.kube/config | grep "name:\|id-token:"
 
 ![](./images/k8s_long_dashboard.png)
 
-**Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl** CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters. Finally, you were able to access a K8s Dashboard.
+**Let's Recap:** Lab-6 allowed you see the PKS installation steps and the process for the creation of K8s clusters - both involved some AWS (IaaS) set-up steps. You saw how the PKS CLI also helps retrieve credentials for the use of the **kubectl**  CLI, and you also saw that the PKS CLI enables the creation, resizing and deletion of clusters. Finally, you were able to access a K8s Dashboard.
 
 In the next lab we will hand-over a K8s cluster to developers.
 
@@ -576,7 +576,7 @@ spec:
 kubectl create -f nginx-example-deployment.yaml -n namespace1
 ```
 
-5. Take a look at your brand new deployment, but note that you do not have access to node information:
+5. Take a look at your brand-new deployment, but note that you do not have access to node information:
 
 ```
 kubectl get nodes
@@ -625,7 +625,7 @@ kubectl get pods -n namespace1
 
 Additional reading: This [page](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration) contains additional information on how to use the `kubectl` CLI.
 
-**Let's recap:** Using your UserID, you were able to deploy 2 pods running NGINX to the a namespace unique to your UserID. You were targeting a small Kubernetes cluster named `pks_managers_cluster`. You were also able to deploy, access and delete a Ubuntu 18.04 Docker image, and a Factorial Docker image. We skipped the need to use Load Balancers because our Workshop Ubuntu VMs were created in the 10.0.0.0/8 subnet to bypass the firewall concerns.
+**Let's recap:** Using your UserID, you were able to deploy 2 pods running NGINX to a namespace unique to your UserID. You were targeting a small Kubernetes cluster named `pks_managers_cluster`. You were also able to deploy, access and delete an Ubuntu 18.04 Docker image, and a Factorial Docker image. We skipped the need to use Load Balancers because our Workshop Ubuntu VMs were created in the 10.0.0.0/8 subnet to bypass the firewall concerns.
 
 Congratulations, you have completed Lab-7.
 
@@ -676,7 +676,7 @@ redis-master   ClusterIP      10.100.200.247   <none>        6379/TCP       92s
 redis-slave    ClusterIP      10.100.200.214   <none>        6379/TCP       92s```
 ```
 
-The `pending` service would normally require us to create an AWS ELB (Elastic Load Balancer), but since our Ubuntu VM belongs to the 10.0.0.0/8 CIDR, and given that we know the Worker Node IP Addresses (i.e. `10.0.10.5`,`10.0.8.7`,`10.0.9.5`) of the cluster `pks_managers_cluster`, we can use `links` to validate that our GuestBook App is running.
+The `pending` service would normally require us to create an AWS ELB (Elastic Load Balancer), but since our Ubuntu VM belongs to the 10.0.0.0/8 CIDR, and given that we know the Worker Node IP Addresses (i.e. `10.0.10.5`,`10.0.8.7`,`10.0.9.5`) of the cluster `pks_managers_cluster`, we can use `links` to validate that our Guestbook App is running.
 Using `port 30075` (i.e. the port number you obtained from your `LoadBalancer` line in the output shown above), try to connect:
 
 ```

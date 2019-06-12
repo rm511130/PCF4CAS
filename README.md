@@ -873,10 +873,10 @@ _____________________________________________________
 
 ### Wrapping-up
 
-We covered a lot of ground today. Lots of new concepts and hopefully lots of valueable learning opportunities.
+We covered a lot of ground today. Lots of new concepts and hopefully lots of valuable learning opportunities.
 We've only scratched the surface. Pivotal has a robust set of services and documented best practices to help you get started with greenfield projects and/or brownfield migrations from old architectures to modern cloud native solutions.
 
-Thank you for your time and attention. We look forward to joint next steps.
+Thank you for your time and attention. We look forward to next steps.
 
 
 

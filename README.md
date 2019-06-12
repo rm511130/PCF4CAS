@@ -529,6 +529,8 @@ Looking at the steps shown above, working from the bottom-up, we see that:
 
 Not shown here: As part of the set-up process for this workshop, we created namespace1, namespace2, ... namespace25 respectively for each user1, user2 ... user25
 
+![](./images/namespacing.png)
+
 The next few steps are for everyone in the workshop to execute using their Ubuntu VMs on AWS, their user-IDs and the namespace# that corresponds to your user-ID. For example: `user23` should use `namespace23`.
 
 ![](./images/lab.png)

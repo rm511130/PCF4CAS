@@ -739,7 +739,7 @@ redis-slave                ClusterIP      10.100.200.214   <none>        6379/TC
 timesample                 ClusterIP      10.100.200.239   <none>        80/TCP         95s
 ```
 
-3. Let's test the new `nginx-ingress-controller` and the service `timesample`:
+3. Let's test the new `nginx-ingress-controller` and the service `timesample`. Note that the port # in the example below will differ from the port # you will get in the previous step: `kubectl get services -n ingress-nginx`. Use your port # instead.
 
 ```
 curl http://10.0.10.5:32311/timesample; echo

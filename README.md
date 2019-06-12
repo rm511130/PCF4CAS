@@ -799,7 +799,7 @@ factorial   LoadBalancer   10.100.200.220   10.195.99.135,100.64.176.7   80:3218
 curl -k http://10.195.99.135/6; echo
 ```
 
-**Quick Recap:** We just saw how PKS on NSX-T creates the LoadBalancer entries for you automatically. It eliminates the needs for support tickets and access to IaaS CLIs for the creation of LoadBalancers and Network Security rules. NSX-T also enables several network topologies for the deployment of K8s clusters per the examples shown below:
+**Quick Recap:** We just saw how PKS on NSX-T creates the LoadBalancer entries for you automatically. It eliminates the need for support tickets and access to IaaS CLIs for the creation of LoadBalancers and Network Security rules. NSX-T also enables several network topologies for the deployment of K8s clusters per the examples shown below:
 
 ![](./images/pks-nsxt-2.png)
 
@@ -807,7 +807,7 @@ curl -k http://10.195.99.135/6; echo
 
 ![](./images/pks-nsxt-4.png)
 
-Furthermore, the VMware ecosystem of products and services guarantee a complete end-to-end enterprise class view of your infrastructure and services:
+Furthermore, the VMware ecosystem of products and services guarantee a complete end-to-end enterprise-class view of your infrastructure and services:
 
 ![](./images/pks-nsxt-6.png)
 

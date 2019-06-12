@@ -701,7 +701,7 @@ Let's try working with an NGINX Ingress Controller now.
 ```
 pks get-kubeconfig pks_managers_cluster -u pks_admin -p password -a https://api.pks.ourpcf.com -k
 kubectl create namespace ingress-nginx
-kubectl create -f ingress-rbac-allinone.yml -n ingress-nginx
+kubectl create -f ingress-rbac-allinone.yml
 ```
 
 You should see an output like the one shown below:
@@ -797,8 +797,9 @@ factorial   LoadBalancer   10.100.200.220   10.195.99.135,100.64.176.7   80:3218
 curl -k http://10.195.99.135/6; echo
 ```
 
-**Quick Recap:** We just saw how PKS on NSX-T creates the LoadBalancer entries for you automatically. It eliminates the needs for support tickets and access to IaaS CLIs for the creation of LoadBalancers and Network Security rules.
+**Quick Recap:** We just saw how PKS on NSX-T creates the LoadBalancer entries for you automatically. It eliminates the needs for support tickets and access to IaaS CLIs for the creation of LoadBalancers and Network Security rules. NSX-T also enables several network topologies for the deployment of K8s clusters per the examples shown below:
 
+![](./images/)
 
 
 

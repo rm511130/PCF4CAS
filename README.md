@@ -698,7 +698,7 @@ Let's try working with an NGINX Ingress Controller now.
 
 ![](./images/lab.png)
 
-1. Continuing on your Ubuntu VM:
+1. Continuing on your Ubuntu VM. The `ingress-rbac-allinone.yml` file in the home directory of your Ubuntu VM needs to be updated. Use this version instead: [`ingress-rbac-allinone.yml`](https://github.com/rm511130/PCF4CAS/blob/master/ingress-rbac-allinone.yml)
 
 ```
 pks get-kubeconfig pks_managers_cluster -u pks_admin -p password -a https://api.pks.ourpcf.com -k

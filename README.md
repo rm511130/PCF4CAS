@@ -753,7 +753,7 @@ You should get an output that looks something like this:
 
 **Quick Recap:** We saw during this lab how to deploy two applications to a K8s cluster. Guestbook leveraged a Redis service and Timesample used an Nginx Ingress Controller. In both cases we would need to create an AWS ELB so that customers could access the Apps but, as developers, we were able to test our Apps by going directly to the correct Worker Nodes and Ports.
 
-Before we can consider this lab complete, let's clean-up using the following script found in the home directory of your Ubuntu VM:
+Before we can consider this lab complete, let's clean-up using the following command:
 
 ```
 kubectl delete -f ingress-rbac-allinone.yml

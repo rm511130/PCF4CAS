@@ -784,13 +784,22 @@ kubectl expose deployment factorial --type=LoadBalancer --port=80 --target-port=
 kubectl get service factorial
 ```
 
-- Grab the `10.195.x.y` IP address and give it a try:
+- The expected output should look something like this:
 
 ```
-curl -k http://10.195.x.y/6; echo
+NAME        TYPE           CLUSTER-IP       EXTERNAL-IP                  PORT(S)        AGE
+factorial   LoadBalancer   10.100.200.220   10.195.99.135,100.64.176.7   80:32186/TCP   5s
 ```
 
-**Quick Recap:** PKS on NSX-T creates the LoadBalancer for you automatically.
+- Grab the `10.195.99.135` IP address and give it a try, there's no need to use the port #.
+
+```
+curl -k http://10.195.99.135/6; echo
+```
+
+**Quick Recap:** We just saw how PKS on NSX-T creates the LoadBalancer entries for you automatically. It eliminates the needs for support tickets and access to IaaS CLIs for the creation of LoadBalancers and Network Security rules.
+
+
 
 
 Congratulations, you have completed Lab-10.

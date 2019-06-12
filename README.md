@@ -774,6 +774,8 @@ Congratulations, you have completed Lab-9.
 - This Lab is a demo. No hands-on is required.
 - We will target a PKS on NSX-T installation running on vSphere to see how NSX-T can make K8s easier to use.
 
+![](./images/pks-nsxt-1.png)
+
 ```
 pks login -a https://api.run.haas-239.pez.pivotal.io:9021 -u pks_admin -p password -k
 # already done: pks login -a https://api.run.haas-239.pez.pivotal.io:9021 -u pks_admin -p password -k
@@ -799,9 +801,17 @@ curl -k http://10.195.99.135/6; echo
 
 **Quick Recap:** We just saw how PKS on NSX-T creates the LoadBalancer entries for you automatically. It eliminates the needs for support tickets and access to IaaS CLIs for the creation of LoadBalancers and Network Security rules. NSX-T also enables several network topologies for the deployment of K8s clusters per the examples shown below:
 
-![](./images/)
+![](./images/pks-nsxt-2.png)
 
+![](./images/pks-nsxt-3.png)
 
+![](./images/pks-nsxt-4.png)
+
+Furthermore, the VMware ecosystem of products and services guarantee a complete end-to-end enterprise class view of your infrastructure and services:
+
+![](./images/pks-nsxt-6.png)
+
+![](./images/pks-nsxt-5.png)
 
 Congratulations, you have completed Lab-10.
 

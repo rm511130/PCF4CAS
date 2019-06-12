@@ -756,7 +756,7 @@ You should get an output that looks something like this:
 Before we can consider this lab complete, let's clean-up using the following script found in the home directory of your Ubuntu VM:
 
 ```
-./clean-up-kubectl.sh -n namespace1
+kubectl delete -f ingress-rbac-allinone.yml
 ```
 
 It may take a few minutes to complete the deletion process.

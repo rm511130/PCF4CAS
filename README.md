@@ -771,6 +771,28 @@ Congratulations, you have completed Lab-9.
 
 ### LAB-10: A quick look at PKS with NSX-T
 
+- This Lab is a demo. No hands-on is required.
+- We will target a PKS on NSX-T installation running on vSphere to see how NSX-T can make K8s easier to use.
+
+```
+pks login -a https://api.run.haas-239.pez.pivotal.io:9021 -u pks_admin -p password -k
+# already done: pks login -a https://api.run.haas-239.pez.pivotal.io:9021 -u pks_admin -p password -k
+pks cluster small
+pks get-credentials small
+kubectl run factorial --replicas=3 --image=rmeira/factorial
+kubectl expose deployment factorial --type=LoadBalancer --port=80 --target-port=3000 --name=factorial
+kubectl get service factorial
+```
+
+- Grab the `10.195.x.y` IP address and give it a try:
+
+```
+curl -k http://10.195.x.y/6; echo
+```
+
+**Quick Recap:** PKS on NSX-T creates the LoadBalancer for you automatically.
+
+
 Congratulations, you have completed Lab-10.
 
 _____________________________________________________

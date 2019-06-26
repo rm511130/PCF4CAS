@@ -38,7 +38,7 @@ A quick way to test your `aws cli`:
 aws ec2 describe-instances | grep -i privateipaddress
 ```
 
-# Now for the fun part: Creating a PKS Cluster    
+# Creating a PKS Cluster using `manage-cluster provision`
 
 Remember to make sure you are in the correct directory:
 
@@ -230,7 +230,9 @@ pks-system    validator-8568fd5c8f-zm8lj              1/1     Running     0     
 
 ## Quick Sanity Check
 
-The 
+On the AWS Console we can see:
+
+![](./images/manage-cluster-provision.png)
 
 
 

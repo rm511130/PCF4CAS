@@ -325,6 +325,10 @@ Succeeded
 And we can find out what is happening to Worker and Master nodes by looking at Tasks:
 
 ```
+bosh -e ci tasks --recent       # or bosh -e ci task 4052    # to see the details of Task 4052
+```
+
+```
 ubuntu@ip-10-0-0-241:~$ bosh -e ci tasks --recent
 Using environment '10.0.16.5' as user 'director' (bosh.*.read, openid, bosh.*.admin, bosh.read, bosh.admin)
 
@@ -364,6 +368,79 @@ ID    State  Started At                    Last Activity At              User   
 
 Succeeded
 ```
+
+-----------------------------------------------------
+
+## Using Kubectl
+
+Let's get back into the VM that has access to our K8s cluster:
+
+```
+ssh -i ~/Downloads/fuse.pem ubuntu@user24.ourpcf.com
+pks login -a https://api.pks.ourpcf.com:9021 -u pks_admin -p password -k
+ubuntu@ip-10-0-0-38:~/manage-pks/aws$ export ENV_NAME=pks
+ubuntu@ip-10-0-0-38:~/manage-pks/aws$ export ROUTE_53_ZONE_ID=Z3IJH5GRT9EDF0
+```
+
+Let's obtain the Kubectl credentials:
+
+```
+pks get-credentials one
+```
+
+You should see an output similar to the one shown below:
+
+```
+ubuntu@ip-10-0-0-38:~$ pks get-credentials one
+
+Fetching credentials for cluster one.
+Password: ********
+Context set for cluster one.
+
+You can now switch between clusters by using:
+$kubectl config use-context <cluster-name>
+```
+
+Let's take a look and Worker Nodes:
+
+```
+kubectl get nodes --all-namespaces
+```
+
+You should see:
+
+```
+ubuntu@ip-10-0-0-38:~$ kubectl get nodes --all-namespaces
+NAME                        STATUS   ROLES    AGE     VERSION
+ip-10-0-10-5.ec2.internal   Ready    <none>   3h9m    v1.13.5
+ip-10-0-8-5.ec2.internal    Ready    <none>   3h15m   v1.13.5
+ip-10-0-9-5.ec2.internal    Ready    <none>   3h12m   v1.13.5
+```
+
+And Services:
+
+```
+kubectl get services --all-namespaces
+```
+
+```
+ubuntu@ip-10-0-0-38:~$ kubectl get services --all-namespaces
+NAMESPACE     NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes             ClusterIP   10.100.200.1     <none>        443/TCP         3h20m
+kube-system   kube-dns               ClusterIP   10.100.200.2     <none>        53/UDP,53/TCP   3h6m
+kube-system   kubernetes-dashboard   NodePort    10.100.200.19    <none>        443:31832/TCP   3h6m
+kube-system   metrics-server         ClusterIP   10.100.200.217   <none>        443/TCP         3h6m
+pks-system    fluent-bit             ClusterIP   10.100.200.131   <none>        24224/TCP       3h6m
+pks-system    validator              ClusterIP   10.100.200.207   <none>        443/TCP         3h6m
+```
+
+So we should be able to access the K8s Dashboard on port 31832. We'll need a token for that, or access to `~/.kube/config`.
+
+Let's create a Load Balancer for the K8s Dashboard that will give us insight into how the cluster `one` is behaving:
+
+![](./images/LoadBalancer-Dashboard-K8s-One.png)
+
+
 
 
 

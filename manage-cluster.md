@@ -11,8 +11,8 @@ pks login -a https://api.pks.ourpcf.com:9021 -u pks_admin -p password -k
 You can execute the following steps to install `manage-cluster` on your Mac:
 
 ```
-$ git clone https://github.com/ronakbanka/manage-pks
-$ cd manage-pks/aws
+git clone https://github.com/ronakbanka/manage-pks
+cd manage-pks/aws
 ```
 
 Let's make sure my `aws cli` is working:
@@ -44,7 +44,7 @@ Usage: ./manage-cluster {provision|access|cleanup}
 OK, then lets create a cluster:
 
 ```
-$ ./manage-cluster provision
+./manage-cluster provision
 ```
 ```
 Enter pks cluster name to be created and press [ENTER]:

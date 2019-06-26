@@ -1,6 +1,6 @@
-##### https://github.com/ronakbanka/manage-pks
+##### https://github.com/ronakbanka/manage-pks by Ronak Banka
 
-# Creating PKS K8s Clusters using Ronak Banka's Manage-Cluster Utility
+# Creating PKS K8s Clusters using Manage-Cluster Utility
 
 Assuming you have a PKS environment running on AWS accessible via:
 

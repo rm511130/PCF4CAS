@@ -2,10 +2,13 @@
 
 # Creating PKS K8s Clusters using Manage-Cluster Utility
 
-Assuming you have a PKS environment running on AWS accessible via:
+Assuming you have a PKS environment running on AWS. And make sure that you have the necessary CLIs:  pks, aws and jq.
 
 ```
+ssh -i ~/Downloads/fuse.pem ubuntu@user24.ourpcf.com
 pks login -a https://api.pks.ourpcf.com:9021 -u pks_admin -p password -k
+ubuntu@ip-10-0-0-38:~/manage-pks/aws$ export ENV_NAME=pks
+ubuntu@ip-10-0-0-38:~/manage-pks/aws$ export ROUTE_53_ZONE_ID=Z3IJH5GRT9EDF0
 ```
 
 You can execute the following steps to install `manage-cluster` on your Mac:
@@ -36,7 +39,6 @@ aws ec2 describe-instances | grep -i privateipaddress
 Remember to make sure you are in the correct directory:
 
 ```
-cd /work/manage-pks/aws
 ./manage-cluster 
 Usage: ./manage-cluster {provision|access|cleanup}
 ```
@@ -219,6 +221,12 @@ pks-system    telegraf-hjdwg                          1/1     Running     0     
 pks-system    telemetry-agent-776d45f8d8-7z7m4        1/1     Running     0          17m
 pks-system    validator-8568fd5c8f-zm8lj              1/1     Running     0          20m
 ```
+
+-----------------------------------------------------
+
+## Quick Sanity Check
+
+The 
 
 
 

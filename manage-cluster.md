@@ -2,7 +2,11 @@
 
 # Creating PKS K8s Clusters using Manage-Cluster Utility
 
-Assuming you have a PKS environment running on AWS. And make sure that you have the necessary CLIs:  pks, aws and jq.
+Assuming you have a PKS environment running on AWS. 
+
+![](./images/aws-ref-pks-arch.png)
+
+Assuming that you have the necessary CLIs:  pks, aws and jq.
 
 ```
 ssh -i ~/Downloads/fuse.pem ubuntu@user24.ourpcf.com

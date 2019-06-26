@@ -232,8 +232,138 @@ pks-system    validator-8568fd5c8f-zm8lj              1/1     Running     0     
 
 On the AWS Console we can see:
 
+- A LoadBalancer pointing at 3 Master Nodes
+- A Route53 entry pointing `one-k8s.ourpcf.com` to the Load Balancer
+- A Security Group definition allowing communication on port 8443
+
 ![](./images/manage-cluster-provision.png)
 
+-----------------------------------------------------
+
+## Let's see what Bosh can tell us:
+
+First we need to access Ops Manager: 
+
+```
+ssh -i ~/Downloads/fuse.pem ubuntu@opsman.ourpcf.com
+```
+
+I've created a `./0.sh` file with the following content:
+
+```
+$ cat ./0.sh 
+bosh alias-env ci -e 10.0.16.5 --ca-cert /var/tempest/workspaces/default/root_ca_certificate
+bosh -e ci login << EOT
+director
+yba0zJLfwJUyCPes-b4QIOI1GXd5LvZP
+EOT
+```
+
+So it's easy to get started with Bosh CLI commands:
+
+```
+ubuntu@ip-10-0-0-241:~$ ./0.sh 
+Using environment '10.0.16.5' as user 'director' (bosh.*.read, openid, bosh.*.admin, bosh.read, bosh.admin)
+
+Name      p-bosh  
+UUID      879a3d0c-127f-4bfd-8c9b-6078a6101835  
+Version   268.2.3 (00000000)  
+CPI       aws_cpi  
+Features  compiled_package_cache: disabled  
+          config_server: enabled  
+          local_dns: enabled  
+          power_dns: disabled  
+          snapshots: disabled  
+User      (not logged in)  
+
+Succeeded
+Using environment '10.0.16.5'
+Email (): director
+Password (): 
+Successfully authenticated with UAA
+Succeeded
+```
+
+Now we can ask Bosh about the PKS Deployments:
+
+```
+bosh -e ci vms
+```
+
+Here's what you should see:
+
+```
+ubuntu@ip-10-0-0-241:~$ bosh -e ci vms
+Using environment '10.0.16.5' as user 'director' (bosh.*.read, openid, bosh.*.admin, bosh.read, bosh.admin)
+
+Task 4062
+Task 4061. Done
+Task 4062 done
+
+Deployment 'pivotal-container-service-9bdbbe836f315bbc999a'
+
+Instance                                                        Process State  AZ          IPs       VM CID               VM Type   Active  
+pivotal-container-service/dcde2a9a-43df-4b79-92bb-5163e2b65695  running        us-east-1a  10.0.4.5  i-0e596cdbf3f517a06  r4.large  true  
+
+1 vms
+
+Deployment 'service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6'
+
+Instance                                     Process State  AZ          IPs        VM CID               VM Type   Active  
+master/6ea23c28-b18a-46df-bb58-cf68cdba6c2f  running        us-east-1c  10.0.10.4  i-057aecdb121542863  m4.large  true  
+master/c430960d-ad7d-412a-b22b-c0c222e73d8c  running        us-east-1b  10.0.9.4   i-05bb15431988d648d  m4.large  true  
+master/e38ea4bd-6c31-4033-b43b-43c430fda8f3  running        us-east-1a  10.0.8.4   i-004fdaf591da0c29d  m4.large  true  
+worker/08cff4e1-c3b2-449f-8718-c178f5e83460  running        us-east-1b  10.0.9.5   i-07beb027ac1435da7  m4.large  true  
+worker/be776efb-d347-4481-98ea-594445e95a27  running        us-east-1a  10.0.8.5   i-0d6ef906bcfdbc22f  m4.large  true  
+worker/ffd928fb-a4cb-430a-9140-1b07b0c5ac8f  running        us-east-1c  10.0.10.5  i-07ff757dd42cefcda  m4.large  true  
+
+6 vms
+
+Succeeded
+```
+
+And we can find out what is happening to Worker and Master nodes by looking at Tasks:
+
+```
+ubuntu@ip-10-0-0-241:~$ bosh -e ci tasks --recent
+Using environment '10.0.16.5' as user 'director' (bosh.*.read, openid, bosh.*.admin, bosh.read, bosh.admin)
+
+ID    State  Started At                    Last Activity At              User                                            Deployment                                             Description                                                                                       Result  
+4052  done   Wed Jun 26 19:52:54 UTC 2019  Wed Jun 26 19:55:17 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6  run errand telemetry-agent from deployment service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6  1 succeeded, 0 errored, 0 canceled  
+4051  done   Wed Jun 26 19:52:45 UTC 2019  Wed Jun 26 19:52:48 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6  run errand vrops-errand from deployment service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6     3 succeeded, 0 errored, 0 canceled  
+4050  done   Wed Jun 26 19:50:04 UTC 2019  Wed Jun 26 19:52:35 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6  run errand apply-addons from deployment service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6     1 succeeded, 0 errored, 0 canceled  
+4049  done   Wed Jun 26 19:34:12 UTC 2019  Wed Jun 26 19:49:54 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6  create deployment                                                                                 /deployments/service-instance_f79a6c2e-d6ca-4e4e-aa48-aa23909407f6  
+4043  done   Wed Jun 26 19:09:04 UTC 2019  Wed Jun 26 19:10:16 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  delete deployment service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511                           /deployments/service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  
+4042  done   Wed Jun 26 19:08:45 UTC 2019  Wed Jun 26 19:08:59 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  run errand drain-cluster from deployment service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511    3 succeeded, 0 errored, 0 canceled  
+4027  done   Wed Jun 26 17:30:35 UTC 2019  Wed Jun 26 17:33:35 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  run errand telemetry-agent from deployment service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  1 succeeded, 0 errored, 0 canceled  
+4026  done   Wed Jun 26 17:30:25 UTC 2019  Wed Jun 26 17:30:34 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  run errand vrops-errand from deployment service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511     3 succeeded, 0 errored, 0 canceled  
+4024  done   Wed Jun 26 17:27:45 UTC 2019  Wed Jun 26 17:30:21 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  run errand apply-addons from deployment service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511     1 succeeded, 0 errored, 0 canceled  
+4023  done   Wed Jun 26 17:06:01 UTC 2019  Wed Jun 26 17:27:36 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  create deployment                                                                                 /deployments/service-instance_1fb4fbda-c596-47e0-a95d-01c66af6b511  
+4020  done   Wed Jun 26 16:16:44 UTC 2019  Wed Jun 26 16:17:52 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_c9ad8374-56c7-418e-92b3-8cf63acd6bee  delete deployment service-instance_c9ad8374-56c7-418e-92b3-8cf63acd6bee                           /deployments/service-instance_c9ad8374-56c7-418e-92b3-8cf63acd6bee  
+4019  done   Wed Jun 26 16:16:34 UTC 2019  Wed Jun 26 16:16:39 UTC 2019  pivotal-container-service-9bdbbe836f315bbc999a  service-instance_c9ad8374-56c7-418e-92b3-8cf63acd6bee  run errand drain-cluster from deployment service-instance_c9ad8374-56c7-418e-92b3-8cf63acd6bee    4 succeeded, 0 errored, 0 canceled  
+4016  done   Wed Jun 26 15:25:07 UTC 2019  Wed Jun 26 15:27:54 UTC 2019  ops_manager                                     pivotal-container-service-9bdbbe836f315bbc999a         create deployment                                                                                 /deployments/pivotal-container-service-9bdbbe836f315bbc999a  
+4015  done   Wed Jun 26 15:25:05 UTC 2019  Wed Jun 26 15:25:05 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'wavefront-proxy/0.14.0'  
+4014  done   Wed Jun 26 15:24:59 UTC 2019  Wed Jun 26 15:24:59 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'backup-and-restore-sdk/1.8.0'  
+4013  done   Wed Jun 26 15:24:50 UTC 2019  Wed Jun 26 15:24:50 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'bpm/1.0.4'  
+4012  done   Wed Jun 26 15:24:47 UTC 2019  Wed Jun 26 15:24:48 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'uaa/71.0'  
+4011  done   Wed Jun 26 15:24:43 UTC 2019  Wed Jun 26 15:24:43 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'pks-telemetry/2.0.0-build.175'  
+4010  done   Wed Jun 26 15:24:39 UTC 2019  Wed Jun 26 15:24:39 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'sink-resources-release/0.1.27'  
+4009  done   Wed Jun 26 15:24:30 UTC 2019  Wed Jun 26 15:24:30 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'pks-vrops/0.13.0'  
+4008  done   Wed Jun 26 15:24:28 UTC 2019  Wed Jun 26 15:24:28 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'syslog/11.4.0'  
+4007  done   Wed Jun 26 15:24:26 UTC 2019  Wed Jun 26 15:24:26 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'pks-vrli/0.9.0'  
+4006  done   Wed Jun 26 15:24:25 UTC 2019  Wed Jun 26 15:24:25 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'nsx-cf-cni/2.4.0.12511604'  
+4005  done   Wed Jun 26 15:24:22 UTC 2019  Wed Jun 26 15:24:22 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'pks-nsx-t/1.25.1'  
+4004  done   Wed Jun 26 15:24:19 UTC 2019  Wed Jun 26 15:24:19 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'pks-api/1.4.0-build.194'  
+4003  done   Wed Jun 26 15:24:14 UTC 2019  Wed Jun 26 15:24:15 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'on-demand-service-broker/0.26.0'  
+4002  done   Wed Jun 26 15:24:11 UTC 2019  Wed Jun 26 15:24:11 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'kubo-service-adapter/1.4.0-build.194'  
+4001  done   Wed Jun 26 15:24:09 UTC 2019  Wed Jun 26 15:24:09 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'cfcr-etcd/1.10.0'  
+4000  done   Wed Jun 26 15:24:06 UTC 2019  Wed Jun 26 15:24:06 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'kubo/0.31.0'  
+3999  done   Wed Jun 26 15:23:59 UTC 2019  Wed Jun 26 15:23:59 UTC 2019  ops_manager                                     -                                                      create release                                                                                    Created release 'docker/35.1.0'  
+
+30 tasks
+
+Succeeded
+```
 
 
 

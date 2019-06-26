@@ -12,12 +12,7 @@ You can execute the following steps to install `manage-cluster` on your Mac:
 
 ```
 $ git clone https://github.com/ronakbanka/manage-pks
-$ cd manage-pks/
-$ ls
-LICENSE		README.md	aws		gcp		images		utils
-$ cd aws
-$ ls
-README.md	manage-cluster
+$ cd manage-pks/aws
 ```
 
 Let's make sure my `aws cli` is working:

@@ -440,6 +440,25 @@ Let's create a Load Balancer for the K8s Dashboard that will give us insight int
 
 ![](./images/LoadBalancer-Dashboard-K8s-One.png)
 
+Now let's access the Dashboard at `https://dash.ourpcf.com:31832` and use the following commands to get the Token:
+
+```
+ubuntu@ip-10-0-0-38:~$ cat ~/.kube/config | grep "name:\|id-token:"
+  name: one
+  name: pks_managers_cluster
+  name: one
+  name: pks_managers_cluster
+- name: pks_admin
+        id-token: eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYXBpLnBrcy5vdXJwY2YuY29tOjg0NDMvdG9rZW5fa2V5cyIsImtpZCI6ImtleS0xIiwidHlwIjoiSldUIn0.eyJqdGkiOiIzNjFkMjcwOTA4ZWE0MDU0YTI4YWZhN2UxNjZkOTMzZiIsInN1YiI6IjQ4NjI0MjE5LWRhNDUtNGY5MC05Y2FjLWVkYzY2Y2FjYzdjMCIsInNjb3BlIjpbIm9wZW5pZCIsInJvbGVzIl0sImNsaWVudF9pZCI6InBrc19jbHVzdGVyX2NsaWVudCIsImNpZCI6InBrc19jbHVzdGVyX2NsaWVudCIsImF6cCI6InBrc19jbHVzdGVyX2NsaWVudCIsImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInVzZXJfaWQiOiI0ODYyNDIxOS1kYTQ1LTRmOTAtOWNhYy1lZGM2NmNhY2M3YzAiLCJvcmlnaW4iOiJ1YWEiLCJ1c2VyX25hbWUiOiJwa3NfYWRtaW4iLCJlbWFpbCI6InBrc19hZG1pbkBwaXZvdGFsLmlvIiwiYXV0aF90aW1lIjoxNTYxNTg5Nzg2LCJyZXZfc2lnIjoiNmU5ODg4YjQiLCJpYXQiOjE1NjE1ODk3ODYsImV4cCI6MTU2MTYzMjk4NiwiaXNzIjoiaHR0cHM6Ly9hcGkucGtzLm91cnBjZi5jb206ODQ0My9vYXV0aC90b2tlbiIsInppZCI6InVhYSIsImF1ZCI6WyJvcGVuaWQiLCJwa3NfY2x1c3Rlcl9jbGllbnQiXX0.i4DSaFOsPYYUvx_3D62rSlOW3O7R8CBPJAri7beMcipx-KKu9osLI5Bok44zw9E-mbKxY26xEmt3KDDoLPQpiZQlwtRK4NJ2TiuEB6xztnjDuZLKuQztRT7FiElrbp2F_4G49dhOnH79xhRtdXgNRnwj4EiaF_GIUJdPiFS_Mf-mxFTlw9XzlIZbRrPsYW587G7RdxIN7SozM5Tnz2sDLzskWbvITyn4sJitzqTSyHbk38_XztIT4H2KtU6yH4dmM4CKiTRhaeJDByqx3nLtt666damzEuNjlggrEPF2YCoQP0naGZ-UwxUNYXkEsnKbyOM2q7IbO_jxm-dfoXGRzw
+```
+
+![](./images/dashboard-31832.png)
+
+And you should see the K8s Dashboard.
+
+
+
+
 
 
 

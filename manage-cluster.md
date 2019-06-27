@@ -504,6 +504,114 @@ After approximately 9 minutes you should see `Last Action: succeeded`
 
 -----------------------------------------------------
 
+## Let's consume CPU from a Cluster
+
+We are going to need three terminal sessions with kubectl access to our cluster `one`:
+
+1. Let's spin up a pod using an Ubuntu image and then access it via a command line prompt:
+
+```
+kubectl config current-context
+kubectl create namespace development
+kubectl run -i --tty ubuntu --image=ubuntu:18.04 --restart=Never -n development -- /bin/bash -il
+If you don't see a command prompt, try pressing enter.
+Note: If it crashes, clean-up using $ kubectl delete pods ubuntu -n development
+```
+
+2. Using a second terminal session:
+
+```
+Mac $ ssh -i ~/Downloads/fuse.pem ubuntu@user24.ourpcf.com
+ubuntu@ip-10-0-0-38:~$ watch -n 2 kubectl top node
+NAME                        CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+ip-10-0-10-5.ec2.internal   42m          2%     825Mi           10%       
+ip-10-0-8-5.ec2.internal    50m          2%     771Mi           9%        
+ip-10-0-8-7.ec2.internal    39m          1%     615Mi           7% 
+ip-10-0-9-5.ec2.internal    60m          3%     872Mi           11%
+```
+
+3. Using a third terminal session let's kick off a lightweight workload:
+
+```
+Mac $ ssh -i ~/Downloads/fuse.pem ubuntu@user24.ourpcf.com
+ubuntu@ip-10-0-0-38:~kubectl run -i --tty ubuntu-v2 --image=ubuntu:18.04 --restart=Never -n development -- /bin/bash -il
+root@ubuntu-v2:/# while true; do time echo 1| awk '{ for(i=1;i<=220000000;i++); }'; done
+```
+
+You should see something like this:
+
+```
+real	0m5.511s
+user	0m5.503s
+sys	    0m0.004s
+
+real	0m5.539s
+user	0m5.536s
+sys	    0m0.000s
+
+real	0m5.517s
+user	0m5.516s
+sys	    0m0.000s
+```
+
+4. Back to the first terminal. Using the Ubuntu command prompt:
+
+```
+root@ubuntu:/# while true; do echo 1 | awk '{ for(i=1;i<100000000;i++) u=sqrt(1.2131415272*i*i/5); }'; done &
+[1] 14
+root@ubuntu:/# while true; do echo 1 | awk '{ for(i=1;i<100000000;i++) u=sqrt(1.2131415272*i*i/5); }'; done &
+[2] 17
+root@ubuntu:/# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 01:44 pts/0    00:00:00 /bin/bash -il
+root        14     1  0 01:44 pts/0    00:00:00 /bin/bash -il
+root        17     1  0 01:44 pts/0    00:00:00 /bin/bash -il
+root        23    17 88 01:44 pts/0    00:00:07 awk { for(i=1;i<100000000;i++) u=sqrt(1.2131415272*i*i/5); }
+root        25    14 88 01:44 pts/0    00:00:03 awk { for(i=1;i<100000000;i++) u=sqrt(1.2131415272*i*i/5); }
+root        26     1  0 01:44 pts/0    00:00:00 ps -ef
+```
+
+5. Observe the second terminal session which is running the `watch -n 2 kubectl top node` command:
+
+```
+NAME                        CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+ip-10-0-10-5.ec2.internal   42m          2%     825Mi           10%       
+ip-10-0-8-5.ec2.internal    50m          2%     771Mi           9%        
+ip-10-0-8-7.ec2.internal    2001m        100%   575Mi           7%        
+ip-10-0-9-5.ec2.internal    60m          3%     872Mi           11%
+```
+
+6. And now take a look at the third terminal window:
+
+
+```
+real	0m11.559s
+user	0m8.443s
+sys	    0m0.004s
+
+real	0m12.115s
+user	0m8.427s
+sys	    0m0.004s
+
+real	0m10.228s
+user	0m8.443s
+sys	    0m0.009s
+
+real	0m12.138s
+user	0m8.429s
+sys	    0m0.008s
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Addendum

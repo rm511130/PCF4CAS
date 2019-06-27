@@ -603,15 +603,24 @@ user	0m8.429s
 sys     0m0.008s
 ```
 
+7. Cleaning-up:
+
+```
+ubuntu@ip-10-0-0-38:~$ kubectl delete pods ubuntu-v2 -n production
+ubuntu@ip-10-0-0-38:~$ kubectl delete pods ubuntu -n development
+```
 
 -----------------------------------------------------
 
-
-## Addendum
+## Bosh Autoscaling
 
 - [Bosh AutoScaler Presentation](https://www.slideshare.net/i_yudai/autoscaling-cloud-foundry-with-bosh)
 
 - [Bosh AutoScaler on GitHub](https://github.com/cloudfoundry-community/bosh-scaler-boshrelease)
+
+-----------------------------------------------------
+
+## Addendum
 
 - [PKS deep-dive presentation](https://docs.google.com/presentation/d/1PIrcWkMsGgRb7NnYGSXSE0QD-hrNtDqS_jt6ANlQOyQ/edit#slide=id.g4c9449bda2_2_22935) 
 

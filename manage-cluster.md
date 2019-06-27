@@ -504,7 +504,7 @@ After approximately 9 minutes you should see `Last Action: succeeded`
 
 -----------------------------------------------------
 
-## Let's consume CPU from a Cluster with namepaces: Development and Production 
+## Noisy Neighbors using namepaces: Development and Production 
 
 We are going to need three terminal sessions with kubectl access to our cluster `one`:
 

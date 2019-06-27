@@ -627,6 +627,8 @@ ubuntu@ip-10-0-0-38:~$ kubectl delete pods ubuntu -n development
 
 - [Kubectl Cheat-Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration)
 
+- [Deep VMware Dive into PKS](https://kb.vmtestdrive.com/hc/en-us/articles/360006367673-Pivotal-Container-Service-Advanced-Walkthroughs)
+
 
 
 

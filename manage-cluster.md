@@ -588,19 +588,19 @@ ip-10-0-9-5.ec2.internal    60m          3%     872Mi           11%
 ```
 real	0m11.559s
 user	0m8.443s
-sys  0m0.004s
+sys     0m0.004s
 
 real	0m12.115s
 user	0m8.427s
-sys  0m0.004s
+sys     0m0.004s
 
 real	0m10.228s
 user	0m8.443s
-sys  0m0.009s
+sys    0m0.009s
 
 real	0m12.138s
 user	0m8.429s
-sys  0m0.008s
+sys   0m0.008s
 ```
 
 

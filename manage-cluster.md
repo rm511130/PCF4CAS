@@ -498,7 +498,11 @@ After approximately 9 minutes you should see `Last Action: succeeded`
 
 -----------------------------------------------------
 
+## Who's who in the PKS World
 
+![](./images/a-day-in-the-life.png)
+
+-----------------------------------------------------
 
 
 
@@ -506,7 +510,7 @@ After approximately 9 minutes you should see `Last Action: succeeded`
 
 - [PKS deep-dive presentation](https://docs.google.com/presentation/d/1PIrcWkMsGgRb7NnYGSXSE0QD-hrNtDqS_jt6ANlQOyQ/edit#slide=id.g4c9449bda2_2_22935) 
 
-
+- [Kubectl Cheat-Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration)
 
 
 

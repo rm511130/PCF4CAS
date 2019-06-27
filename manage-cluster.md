@@ -544,15 +544,15 @@ You should see something like this:
 ```
 real	0m5.511s
 user	0m5.503s
-sys  0m0.004s
+sys     0m0.004s
 
 real	0m5.539s
 user	0m5.536s
-sys  0m0.000s
+sys     0m0.000s
 
 real	0m5.517s
 user	0m5.516s
-sys  0m0.000s
+sys     0m0.000s
 ```
 
 4. Back to the first terminal. Using the Ubuntu command prompt:
@@ -596,11 +596,11 @@ sys     0m0.004s
 
 real	0m10.228s
 user	0m8.443s
-sys    0m0.009s
+sys     0m0.009s
 
 real	0m12.138s
 user	0m8.429s
-sys   0m0.008s
+sys     0m0.008s
 ```
 
 

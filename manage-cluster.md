@@ -620,6 +620,7 @@ ubuntu@ip-10-0-0-38:~$ kubectl delete pods ubuntu -n development
 
 -----------------------------------------------------
 
+
 ## Addendum
 
 - [PKS deep-dive presentation](https://docs.google.com/presentation/d/1PIrcWkMsGgRb7NnYGSXSE0QD-hrNtDqS_jt6ANlQOyQ/edit#slide=id.g4c9449bda2_2_22935) 

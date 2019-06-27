@@ -93,3 +93,23 @@ ubuntu@ip-10-0-0-38:~$
 
 
 -----------------------------------------------------
+
+## Next
+
+https://helm.sh/docs/using_helm/
+
+https://github.com/helm/charts/tree/master/stable/prometheus
+
+-----------------------------------------------------
+
+## Operators
+
+https://coreos.com/operators/prometheus/docs/latest/user-guides/getting-started.html#example-prometheus-operator-manifest
+
+
+
+
+
+
+
+

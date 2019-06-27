@@ -461,11 +461,50 @@ And you should see the K8s Dashboard.
 ![](./images/dashboard-gui-31832-one.png)
 
 
+-----------------------------------------------------
+
+## Using PKS to resize a cluster
+
+Let's resize our cluster `one` to 4 Worker Nodes:
+
+```
+pks resize one -n 4
+```
+
+You should see an output similar to the one shown below:
+
+```
+ubuntu@ip-10-0-0-38:~$ pks resize one -n 4
+
+Are you sure you want to resize cluster one to 4? (y/n): y
+Use 'pks cluster one' to monitor the state of your cluster
+
+ubuntu@ip-10-0-0-38:~$ pks cluster one
+
+Name:                     one
+Plan Name:                medium
+UUID:                     f79a6c2e-d6ca-4e4e-aa48-aa23909407f6
+Last Action:              UPDATE
+Last Action State:        in progress
+Last Action Description:  Instance update in progress
+Kubernetes Master Host:   one-k8s.ourpcf.com.
+Kubernetes Master Port:   8443
+Worker Nodes:             4
+Kubernetes Master IP(s):  10.0.10.4, 10.0.9.4, 10.0.8.4
+Network Profile Name: 
+```
+
+After approximately 9 minutes you should see `Last Action: succeeded`
+
+-----------------------------------------------------
 
 
 
 
 
+## Addendum
+
+- [PKS deep-dive presentation](https://docs.google.com/presentation/d/1PIrcWkMsGgRb7NnYGSXSE0QD-hrNtDqS_jt6ANlQOyQ/edit#slide=id.g4c9449bda2_2_22935) 
 
 
 

@@ -508,7 +508,7 @@ After approximately 9 minutes you should see `Last Action: succeeded`
 
 We are going to need three terminal sessions with kubectl access to our cluster `one`:
 
-1. Let's spin up a pod using an Ubuntu image and then access it via a command line prompt:
+1. Let's spin up a pod using an Ubuntu image in a `development` namespace, and then access it via a command line prompt:
 
 ```
 kubectl config current-context
@@ -530,11 +530,12 @@ ip-10-0-8-7.ec2.internal    39m          1%     615Mi           7%
 ip-10-0-9-5.ec2.internal    60m          3%     872Mi           11%
 ```
 
-3. Using a third terminal session let's kick off a lightweight workload:
+3. Using a third terminal session let's kick off a lightweight workload in a `production` namespace:
 
 ```
 Mac $ ssh -i ~/Downloads/fuse.pem ubuntu@user24.ourpcf.com
-ubuntu@ip-10-0-0-38:~kubectl run -i --tty ubuntu-v2 --image=ubuntu:18.04 --restart=Never -n development -- /bin/bash -il
+ubuntu@ip-10-0-0-38:~$ kubectl create namespace production
+ubuntu@ip-10-0-0-38:~$ kubectl run -i --tty ubuntu-v2 --image=ubuntu:18.04 --restart=Never -n production -- /bin/bash -il
 root@ubuntu-v2:/# while true; do time echo 1| awk '{ for(i=1;i<=220000000;i++); }'; done
 ```
 
@@ -581,7 +582,7 @@ ip-10-0-8-7.ec2.internal    2001m        100%   575Mi           7%
 ip-10-0-9-5.ec2.internal    60m          3%     872Mi           11%
 ```
 
-6. And now take a look at the third terminal window:
+6. And now take a look at the third terminal window, the one showing the workload in the `production` namespace:
 
 
 ```
@@ -603,18 +604,14 @@ sys	    0m0.008s
 ```
 
 
-
-
-
-
-
-
-
-
-
+-----------------------------------------------------
 
 
 ## Addendum
+
+- [Bosh AutoScaler Presentation](https://www.slideshare.net/i_yudai/autoscaling-cloud-foundry-with-bosh)
+
+- [Bosh AutoScaler on GitHub](https://github.com/cloudfoundry-community/bosh-scaler-boshrelease)
 
 - [PKS deep-dive presentation](https://docs.google.com/presentation/d/1PIrcWkMsGgRb7NnYGSXSE0QD-hrNtDqS_jt6ANlQOyQ/edit#slide=id.g4c9449bda2_2_22935) 
 
